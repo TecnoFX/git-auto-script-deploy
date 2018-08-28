@@ -281,9 +281,9 @@
 
                   <!-- Priority -->
                   <div class="mr-4">
-                    <h4 class="small font-weight-normal text-secondary mb-0">Priority</h4>
+                    <h4 class="small font-weight-normal text-secondary mb-0">Build</h4>
                     <span class="fa fa-arrow-up text-warning font-size-13"></span>
-                    <span class="text-dark">Medium</span>
+                    <span class="text-dark"><strong class="{{project.last_hook_status?'text-success':'text-danger'}}">{{project.last_hook_status?'Sucesso':'Error'}} </strong></span>
                   </div>
                   <!-- End Priority -->
                 </div>
