@@ -1,10 +1,5 @@
 {% extends 'full.layout.html.twig' %}
-
 {% block title %}Projetos{% endblock %}
-{% block head %}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
-{% endblock %}
-
 
 {% block body %}
 <main id="content" role="main">
@@ -199,8 +194,7 @@
 
 		  <script>
 
-		  $(function()
-		  {
+		  $(document).on('ready', function () {
 
 		  $('#deploy_log_modal').on('show.bs.modal', function (event) {
 				 var modal = $(this)
@@ -343,7 +337,7 @@
       </a>
       <!-- End Logo -->
 
-      <p class="small text-muted">© Tecno FX. 2018 Auto Deploy. All rights reserved.</p>
+      <p class="small text-muted">© Tecno FX. {{ "now"|date("Y") }} Auto Deploy. All rights reserved.</p>
     </div>
     <!-- End Copyright -->
   </footer>
