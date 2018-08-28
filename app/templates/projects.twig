@@ -289,13 +289,12 @@
         <div class="mb-7">
           <div class="card-deck d-block d-md-flex">
 
-
 		  {% if pager.pagination.count==0 %}
-			<tfoot><tr> <td colspan="4" class="text-info text-center">Sorry no projects found. <a  class="btn btn-info btn-sm" href="{{ urlFor('project_form') }}">
-			Criar Projeto
-		</a></td> </tr></tfoot>
+			Sorry no projects found.
+			<a  class="btn btn-info btn-sm" href="{{ urlFor('project_form') }}">
+			Criar Projeto</a>
+			{% else %}
 
-		   {% else %}
 			{% for project in projects %}
 
             <!-- Projects -->
