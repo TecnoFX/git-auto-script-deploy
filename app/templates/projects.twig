@@ -225,7 +225,7 @@ $('#deploy_log_modal').on('show.bs.modal', function (event) {
   var id =  $(event.relatedTarget).data('project-id') // Button that triggered the modal
  var log=nl2br($('#project_'+id).text());
 
-   modal.find('.modal-title').text('Last Deployment log for project ' + id)
+   modal.find('.modal-title').text('Último log de implantação para o projeto ' + id)
 
   modal.find('.modal-body').html( log?log:'No content')
 })
