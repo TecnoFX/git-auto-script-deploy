@@ -271,62 +271,7 @@
   </main>
 
 {% include 'flash.twig' %}
-<div class="card form-project ">
-    <div class="card-block">
-        <h4 class="card-title ">
-            Buscar Projeto
-        </h4>
-        <form method="post" action="{{urlFor('project_search')}}">
-            <div class="form-group ">
-                <label for="search_text"  >
-                    Buscar
-                </label>
 
-                    <input class="form-control" type="text" value="{{query.search_text}}" id="search_text" name="search_text"/>
-
-            </div>
-            <div class="form-group">
-                <label for="project_status"  >
-                    Status do Projeto
-                </label>
-
-                <select   class="form-control " name="project_status" id="project_status"    >
-                		 <option value="" >
-                		 	Qualquer
-                     </option>
-                    {% for key,value in project_status %}
-                    <option value="{{ key }}" {% if query.project_status ==(key) and query.project_status!="" %} selected{%endif%} >
-                        {{ value }}
-                    </option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="project_type"  >
-                    Tipo do Projeto
-                </label>
-
-                <select   class="form-control" name="project_type" id="project_type"    >
-                         <option value="" >
-                            Qualquer
-                     </option>
-                    {% for key,value in project_types %}
-                    <option value="{{ key }}" {% if query.project_type ==(key) and query.project_type!="" %} selected{%endif%} >
-                        {{ value }}
-                    </option>
-                    {% endfor %}
-                </select>
-            </div>
-             <button class="btn btn-lg btn-primary " type="submit" name="search">
-                Buscar
-            </button>
-            <button class="btn btn-lg btn-info " type="submit" name="reset">
-                Limpar filtro
-            </button>
-        </form>
-    </div>
-</div>
-<br/>
 {% endblock %}
 {% block foot %}
 <footer>
