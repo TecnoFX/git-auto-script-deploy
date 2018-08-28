@@ -903,4 +903,5 @@
 		return ('ontouchstart' in window);
 	}
 
+
 })(jQuery);
