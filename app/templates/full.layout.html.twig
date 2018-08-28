@@ -224,10 +224,10 @@
             <div class="d-none d-sm-inline-block ml-sm-auto">
               <ul class="list-inline mb-0">
                 <li class="list-inline-item mr-0">
-                  <a class="u-header__topbar-nav-link" href="help.html">Help</a>
+                  <a class="u-header__topbar-nav-link" href="/">Ajuda</a>
                 </li>
                 <li class="list-inline-item mr-0">
-                  <a class="u-header__topbar-nav-link" href="contacts-agency.html">Contacts</a>
+                  <a class="u-header__topbar-nav-link" href="/">Contato</a>
                 </li>
               </ul>
             </div>
@@ -247,32 +247,6 @@
               </a>
             </li>
             <!-- End Search -->
-
-            <!-- Shopping Cart -->
-            <li class="list-inline-item position-relative">
-              <a id="shoppingCartDropdownInvoker" class="btn btn-xs u-btn--icon u-btn-text-secondary" href="javascript:;" role="button"
-                      aria-controls="shoppingCartDropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      data-unfold-event="hover"
-                      data-unfold-target="#shoppingCartDropdown"
-                      data-unfold-type="css-animation"
-                      data-unfold-duration="300"
-                      data-unfold-delay="300"
-                      data-unfold-hide-on-scroll="true"
-                      data-unfold-animation-in="slideInUp"
-                      data-unfold-animation-out="fadeOut">
-                <span class="fa fa-shopping-cart u-btn--icon__inner"></span>
-              </a>
-
-              <div id="shoppingCartDropdown" class="text-center u-unfold right-0 p-7 mt-2" aria-labelledby="shoppingCartDropdownInvoker" style="min-width: 250px;">
-                <span class="u-shopping-cart-icon mb-4">
-                  <span class="fa fa-shopping-basket u-shopping-cart-icon__inner"></span>
-                </span>
-                <span class="d-block">Your Cart is Empty</span>
-              </div>
-            </li>
-            <!-- End Shopping Cart -->
 
             <!-- Account Login -->
             <li class="list-inline-item">
@@ -306,8 +280,8 @@
         <!-- Nav -->
         <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar">
           <!-- Logo -->
-          <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-top-space" href="../home/index.html" aria-label="Front">
-            <img src="../../assets/svg/logos/logo.svg" alt="Logo">
+          <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-top-space" href="{{ urlFor('projects') }}" aria-label="Front">
+            <img src="/assets/svg/logos/logo.svg" alt="Logo">
           </a>
           <!-- End Logo -->
 
@@ -1018,48 +992,7 @@
   </header>
   <!-- ========== END HEADER ========== -->
 
-	<nav class="pink-skin navbar navbar-toggleable-md navbar-inverse   fixed-top">
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon">
-			</span>
-		</button>
-		<a class="navbar-brand" href="{{ urlFor('projects') }}">
-			<img style="height: 42px;" src="/assets/images/logo.svg"/>
-		</a>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav ml-auto">
-				{% if not loggedin %}
-				<li class="nav-item">
-					<a class="nav-link active" href="{{ urlFor('login') }}">
-						Login
-					</a>
-				</li>
-				{%else%}
-				<li class="nav-item">
-					<a class="nav-link active" href="{{ urlFor('projects') }}">
-						Projetos
-					</a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-						{{ auth_user.username }}
-					</a>
-					<div class="dropdown-menu">
-							<a class="dropdown-item" href="{{ urlFor('profile') }}">
-							Perfil
-						</a>
-						<a class="dropdown-item" href="{{ urlFor('settings') }}">
-							Configurações
-						</a>
-						<a class="dropdown-item" href="{{ urlFor('logout') }}">
-							Sair
-						</a>
-					</div>
-				</li>
-				{%endif%}
-			</ul>
-		</div>
-	</nav>
+	
 
 
 	{% block body %}{% endblock %}
