@@ -144,7 +144,7 @@
 				<div class="col-6">
 				  <a class="small text-secondary" href="#">
 					<span class="fa fa-bookmark text-primary mr-1"></span>
-					ID-{{project.id}}
+
 				  </a>
 				</div>
 				<div class="col-6 text-right">
@@ -155,23 +155,7 @@
 					</a>
 
 					<div id="settingsDropdown{{project.id}}" class="u-unfold right-0 text-left pl-2 mt-2 u-unfold--css-animation u-unfold--hidden fadeOut" aria-labelledby="settingsDropdown{{project.id}}Invoker" style="min-width: 160px; animation-duration: 300ms;">
-					  <a class="u-list__link" href="{{ urlFor('project_form',{'id':project.id}) }}">
-						<span class="fa fa-cogs min-width-6 text-center font-size-13"></span>
-						Editar
-					  </a>
 
-					  <a class="u-list__link" href="#">
-						<span class="fa fa-code-branch min-width-6 text-center font-size-13"></span>
-						Repository
-					  </a>
-					  <a class="u-list__link" href="#">
-						<span class="fa fa-cloud-download-alt min-width-6 text-center font-size-13"></span>
-						Download
-					  </a>
-					  <a class="u-list__link" href="#" data-id="{{project.id}}">
-						<span class="fa fa-trash min-width-6 text-center font-size-13"></span>
-						Excluir
-					  </a>
 					</div>
 				  </div>
 				  <!-- End Settings -->
@@ -190,7 +174,7 @@
 
 				</div>
 				<!-- End Title -->
-				<h4 class="h6 font-weight-normal mb-1">{{ attribute(project_status, project.status) }}</h4>
+				<h4 class="h6 font-weight-normal mb-1"></h4>
 
 			  </div>
 			</div>
@@ -200,7 +184,7 @@
 			  <div class="row align-items-center">
 				<div class="col-6 u-ver-divider">
 				  <h5 class="small font-weight-normal text-secondary mb-0">Branch</h5>
-				  <span class="text-dark">{{ project.branch }}</span>
+				  <span class="text-dark"></span>
 				</div>
 				<div class="col-6">
 				  <h5 class="small font-weight-normal text-secondary mb-0">Priority</h5>
@@ -223,33 +207,34 @@
               <div class="col-6">
                 <a class="small text-secondary" href="#">
                   <span class="fa fa-bookmark text-primary mr-1"></span>
-                  FR-52
+                  ID-{{project.id}}
                 </a>
               </div>
               <div class="col-6 text-right">
                 <!-- Settings -->
                 <div class="position-relative">
-                  <a id="settingsDropdown1Invoker" class="u-icon u-icon-secondary--air u-icon--sm u-bg-transparent rounded" href="javascript:;" role="button" aria-controls="settingsDropdown1" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#settingsDropdown1" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
+                  <a id="settingsDropdown{{project.id}}Invoker" class="u-icon u-icon-secondary--air u-icon--sm u-bg-transparent rounded" href="javascript:;" role="button" aria-controls="settingsDropdown{{project.id}}" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#settingsDropdown{{project.id}}" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
                     <span class="fa fa-ellipsis-h u-icon__inner"></span>
                   </a>
 
-                  <div id="settingsDropdown1" class="u-unfold right-0 text-left pl-2 mt-2 u-unfold--css-animation u-unfold--hidden fadeOut" aria-labelledby="settingsDropdown1Invoker" style="min-width: 160px; animation-duration: 300ms; right: 0px;">
-                    <a class="u-list__link" href="#">
-                      <span class="fa fa-cogs min-width-6 text-center font-size-13"></span>
-                      Settings
-                    </a>
-                    <a class="u-list__link" href="#">
-                      <span class="fa fa-code-branch min-width-6 text-center font-size-13"></span>
-                      Repository
-                    </a>
-                    <a class="u-list__link" href="#">
-                      <span class="fa fa-cloud-download-alt min-width-6 text-center font-size-13"></span>
-                      Download
-                    </a>
-                    <a class="u-list__link" href="#">
-                      <span class="fa fa-archive min-width-6 text-center font-size-13"></span>
-                      Archive
-                    </a>
+                  <div id="settingsDropdown{{project.id}}" class="u-unfold right-0 text-left pl-2 mt-2 u-unfold--css-animation u-unfold--hidden fadeOut" aria-labelledby="settingsDropdown{{project.id}}Invoker" style="min-width: 160px; animation-duration: 300ms; right: 0px;">
+					  <a class="u-list__link" href="{{ urlFor('project_form',{'id':project.id}) }}">
+						<span class="fa fa-cogs min-width-6 text-center font-size-13"></span>
+						Editar
+					  </a>
+
+					  <a class="u-list__link" href="#">
+						<span class="fa fa-code-branch min-width-6 text-center font-size-13"></span>
+						Repository
+					  </a>
+					  <a class="u-list__link" href="#">
+						<span class="fa fa-cloud-download-alt min-width-6 text-center font-size-13"></span>
+						Download
+					  </a>
+					  <a class="u-list__link" href="#" data-id="{{project.id}}">
+						<span class="fa fa-trash min-width-6 text-center font-size-13"></span>
+						Excluir
+					  </a>
                   </div>
                 </div>
                 <!-- End Settings -->
@@ -280,17 +265,17 @@
                 <div class="d-sm-flex align-items-sm-center">
                   <!-- Members List -->
                   <div class="mb-3 mb-sm-0 mr-4">
-                    <h4 class="small font-weight-normal text-secondary mb-0">Members</h4>
+                    <h4 class="small font-weight-normal text-secondary mb-0">Status</h4>
 					<span class="fa fa-arrow-up text-warning font-size-13"></span>
-                    <span class="text-dark">Medium</span>
+                    <span class="text-dark">{{ attribute(project_status, project.status) }}</span>
 
                   </div>
                   <!-- End Members List -->
 
                   <!-- Budget -->
                   <div class="u-ver-divider u-ver-divider--none-sm pr-4 mb-3 mb-sm-0 mr-4">
-                    <h4 class="small font-weight-normal text-secondary mb-0">Budget</h4>
-                    <span class="text-dark">$9,145</span>
+                    <h4 class="small font-weight-normal text-secondary mb-0">Branch</h4>
+                    <span class="text-dark">{{ project.branch }}</span>
                   </div>
                   <!-- End Budget -->
 
