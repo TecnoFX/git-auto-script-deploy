@@ -1,43 +1,9 @@
 {% extends 'full.layout.html.twig' %}
-{% block title %}Projects{% endblock %}
+
+{% block title %}Projetos{% endblock %}
 {% block head %}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
-
-<style type="text/css">
-
-
- .form-project {
-  max-width: 1080px;
-  padding: 15px;
-  margin: 0 auto;
-}
-.form-project .form-signin-heading,
-
-
-.form-project .form-control {
-  position: relative;
-  height: auto;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 10px;
-  font-size: 16px;
-}
-.form-project .form-control:focus {
-  z-index: 2;
-}
-.form-project input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-
-
-</style>
 {% endblock %}
-
-
 
 
 {% block body %}
@@ -50,9 +16,8 @@
             <div class="d-flex d-lg-inline-block justify-content-between justify-content-lg-end align-items-center align-items-lg-start">
               <!-- Breadcrumb -->
               <ol class="breadcrumb breadcrumb-white breadcrumb-no-gutter mb-0">
-                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../home/index.html">Home</a></li>
-                <li class="breadcrumb-item"><a class="breadcrumb-link" href="dashboard.html">Account</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Projects</li>
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Projetos</li>
               </ol>
               <!-- End Breadcrumb -->
 
@@ -78,8 +43,8 @@
                 </span>
               </div>
               <div class="media-body">
-                <h1 class="h3 text-white font-weight-medium mb-1">Howdy, Natalie!</h1>
-                <span class="d-block text-white">natalie.curtis@gmail.com</span>
+                <h1 class="h3 text-white font-weight-medium mb-1">Olá, Luiz Jr!</h1>
+                <span class="d-block text-white">luizjrdeveloper@gmail.com</span>
               </div>
             </div>
             <!-- End User Info -->
@@ -214,9 +179,7 @@
 
 	<div class="card form-project ">
 	    <div class="card-block">
-	        <h4 class="card-title float-left">
-	            Projetos ({{pagination.count }} item{{pagination.count>1?'s':'' }})
-	        </h4>
+
 	        <div class="float-right">
 	          {% if  pager.pagination.count    %}
 	            <a  class="btn btn-info btn-sm" href="{{ urlFor('project_form') }}">
@@ -366,14 +329,15 @@
 	}
 	</script>
 
-	
+
     <!-- Content Section -->
     <div class="u-bg-light-blue-50">
       <div class="container u-space-2">
         <div class="row justify-content-between align-items-center mb-4">
           <!-- Title -->
           <div class="col-sm-4 col-md-6 mb-3 mb-sm-0">
-            <h2 class="h6 mb-0">52 projects found</h2>
+            <h2 class="h6 mb-0"><h4 class="card-title float-left">
+				{{pagination.count }} Projeto{{pagination.count>1?'s':'' }}</h2>
           </div>
           <!-- End Title -->
 
