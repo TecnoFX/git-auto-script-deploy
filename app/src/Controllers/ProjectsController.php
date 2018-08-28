@@ -36,7 +36,7 @@ class ProjectsController
             $dbQuery = $dbQuery->where('name', "=", $params['query']['search_text']);
 
         }
-        if (isset($params['query']['project_type']) && $params['query']['project_type'])
+		if (isset($params['query']['project_type']) && $params['query']['project_type'])
         {
             $dbQuery = $dbQuery->where('type', "=", $params['query']['project_type']);
 
@@ -62,7 +62,8 @@ class ProjectsController
 
         $params['projects']       = $projecs;
         $params['pager']     = $pagination;
-        $params['project_types']  = $this->project_types;
+		$params['project_types']  = $this->project_types;
+        $params['project_types']  = $this->project_types2;
         $params['project_status'] = $this->project_status;
 
          return $this->view->render($response, 'projects.twig', $params);
