@@ -63,7 +63,7 @@
 
                 <select   class="form-control " name="project_status" id="project_status"    >
                 		 <option value="" >
-                		 	Any
+                		 	Qualquer
                      </option>
                     {% for key,value in project_status %}
                     <option value="{{ key }}" {% if query.project_status ==(key) and query.project_status!="" %} selected{%endif%} >
@@ -79,7 +79,7 @@
 
                 <select   class="form-control" name="project_type" id="project_type"    >
                          <option value="" >
-                            Any
+                            Qualquer
                      </option>
                     {% for key,value in project_types %}
                     <option value="{{ key }}" {% if query.project_type ==(key) and query.project_type!="" %} selected{%endif%} >
