@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>  
+<html lang="pt_BR">
+<head>
+	<meta charset="UTF-8">
+	<meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <meta charset="UTF-8">
-  <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- add material css | replace bootstrap.css -->
+	<link href="{{ base_url() }}/css/material.min.css" rel="stylesheet"></head>
+	<body class="{% block theme %}default{% endblock %}">
+		{% block layout %}{% endblock %}
 
-  <!-- add material css | replace bootstrap.css -->
-  <link href="{{ base_url() }}/css/material.min.css" rel="stylesheet"></head>
-  <body class="{% block theme %}default{% endblock %}">
-    {% block layout %}{% endblock %}
+		<!-- js -->
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 
-         <!-- js -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+		<!-- add material js on top of bootstrap.js -->
+		<script src="{{ base_url() }}/js/material.min.js"></script>
 
-    <!-- add material js on top of bootstrap.js -->
-    <script src="{{ base_url() }}/js/material.min.js"></script>
-
-  </body>
+	</body>
 </html>

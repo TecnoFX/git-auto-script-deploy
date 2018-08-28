@@ -1,8 +1,8 @@
 {
-    "name": "scriptburn/git-auto-deploy",
+    "name": "scriptburn/git-auto-script-deploy",
     "description": "Deploy your GitHub, GitLab or Bitbucket projects automatically on Git push events or web hooks Edit",
     "keywords": ["auto-deploy", "bitbucket", "github", "gitlab"],
-    "homepage": "https://github.com/scriptburn/git-auto-deploy",
+    "homepage": "https://github.com/scriptburn/git-auto-script-deploy",
     "license": "MIT",
     "pversion":"1.0.5",
     "dbversion":"2",

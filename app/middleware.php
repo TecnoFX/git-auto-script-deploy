@@ -3,7 +3,7 @@
 $app->add(function (  $request,   $response,   $next)
 {
          $dbUpdateCheck = new App\Services\DbUpdateService($this->setting, $this->db, ['type' => 'composer', 'path' => __DIR__ . "/../composer.json"]);
-        $dbUpdateCheck->maybeUpdate('scriptburn/git-auto-deploy');
+        $dbUpdateCheck->maybeUpdate('scriptburn/git-auto-script-deploy');
 
     return $next($request, $response);
 });

@@ -84,8 +84,8 @@ class BitBucketService extends GitService
     public function test()
     {
         /*
-    rm -rf /Volumes/MacData/htdocs/test/git-auto-deploy-test-bb;
-    git clone git@bitbucket.org:rajneeshojha/test.git /Volumes/MacData/htdocs/test/git-auto-deploy-test-bb
+    rm -rf /Volumes/MacData/htdocs/test/git-auto-script-deploy-test-bb;
+    git clone git@bitbucket.org:rajneeshojha/test.git /Volumes/MacData/htdocs/test/git-auto-script-deploy-test-bb
 
      */
     }

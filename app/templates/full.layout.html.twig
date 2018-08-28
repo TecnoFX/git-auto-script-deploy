@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt_BR">
     <head>
         <title>
-            {% block title %}Git Deploy{% endblock %}
+            {% block title %}Git Script Deploy{% endblock %}
         </title>
         <meta charset="UTF-8"/>
         <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport"/>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <!-- add material css | replace bootstrap.css -->
         <link href="{{ base_url() }}/assets/css/material.min.css" rel="stylesheet"/>
@@ -20,7 +20,7 @@
                 </span>
             </button>
             <a class="navbar-brand" href="{{ urlFor('projects') }}">
-                <img style="height: 64px;" src="http://scriptburn.com/wp-content/uploads/edd/2015/07/scriptburn-logo1.png"/>
+                <img style="height: 64px;" src="/assets/logo.svg"/>
             </a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
@@ -33,7 +33,7 @@
                     {%else%}
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ urlFor('projects') }}">
-                            Projects
+                            Projetos
                         </a>
                     </li>
                     <li class="nav-item dropdown">
@@ -42,13 +42,13 @@
                         </a>
                         <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ urlFor('profile') }}">
-                                Profile
+                                Perfil
                             </a>
                             <a class="dropdown-item" href="{{ urlFor('settings') }}">
-                                Settings
+                                Configurações
                             </a>
                             <a class="dropdown-item" href="{{ urlFor('logout') }}">
-                                Logout
+                                Sair
                             </a>
                         </div>
                     </li>
@@ -65,10 +65,10 @@
         </div>
         <footer class="footer sticky-footer9" style="padding-top: 20px;">
             <div class="container-fluid text-center">
-                
-                    © <a href="http://scriptburn.com">ScriptBurn</a> {{ "now"|date("Y") }} <a href="https://github.com/scriptburn/git-auto-deploy">git-auto-deploy</a>
 
-                 
+                    © <a href="https://tecnofx.com">Scrip Deploy</a> {{ "now"|date("Y") }} <a href="https://github.com/TecnoFX/git-auto-script-deploy">git-auto-script-deploy</a>
+
+
             </div>
         </footer>
         <!-- js -->
