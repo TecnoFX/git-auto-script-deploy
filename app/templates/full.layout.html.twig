@@ -981,23 +981,7 @@
 		  						Projetos
 		  					</a>
 		  				</li>
-		  				<li class="nav-item dropdown">
-		  					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-		  						{{ auth_user.username }}
-		  					</a>
-		  					<div class="dropdown-menu">
-		  							<a class="dropdown-item" href="{{ urlFor('profile') }}">
-		  							Perfil
-		  						</a>
-		  						<a class="dropdown-item" href="{{ urlFor('settings') }}">
-		  							Configurações
-		  						</a>
-		  						<a class="dropdown-item" href="{{ urlFor('logout') }}">
-		  							Sair
-		  						</a>
-		  					</div>
-		  				</li>
-		  				{%endif%}
+
 		  			</ul>
 		  		</div>
 		  	</nav>
@@ -1011,6 +995,23 @@
                 </a>
               </li>
 			  {%else%}
+			  <li class="nav-item dropdown">
+				  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+					  {{ auth_user.username }}
+				  </a>
+				  <div class="dropdown-menu">
+						  <a class="dropdown-item" href="{{ urlFor('profile') }}">
+						  Perfil
+					  </a>
+					  <a class="dropdown-item" href="{{ urlFor('settings') }}">
+						  Configurações
+					  </a>
+					  <a class="dropdown-item" href="{{ urlFor('logout') }}">
+						  Sair
+					  </a>
+				  </div>
+			  </li>
+			  {%endif%}
 
               <!-- End Button -->
             </ul>
