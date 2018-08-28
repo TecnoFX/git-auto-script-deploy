@@ -6,20 +6,18 @@
     <!-- Form -->
     <div class="d-flex align-items-center position-relative min-height-100vh--lg">
 
-
-
-
-
-
       <div class="container">
         <div class="row no-gutters">
           <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 u-space-3 u-space-0--lg">
+
             <!-- Form -->
-            <form class="js-validate mt-5">
+			{% include 'flash.twig' %}
+	        {% set form = flash('form') %}
+            <form class="js-validate mt-5" method="post">
               <!-- Title -->
               <div class="mb-7">
-                <h2 class="h3 text-primary font-weight-normal mb-0">Welcome <span class="font-weight-bold">back</span></h2>
-                <p>Login to manage your account.</p>
+                <h2 class="h3 text-primary font-weight-normal mb-0">Bem Vindo de <span class="font-weight-bold">Volta</span></h2>
+                <p>Faça Login para Gerenciar Seus Projetos.</p>
               </div>
               <!-- End Title -->
 
@@ -28,7 +26,7 @@
                 <label class="h6 small d-block text-uppercase">Email address</label>
 
                 <div class="js-focus-state input-group u-form">
-                  <input type="email" class="form-control u-form__input" name="email" required="" placeholder="jack@walley.com" aria-label="jack@walley.com" data-msg="Please enter a valid email address." data-error-class="u-has-error" data-success-class="u-has-success">
+                  <input type="text" class="form-control u-form__input" name="username" required autofocus placeholder="Usuário" aria-label="Usuário" value="{{ form.username }}"/>
                 </div>
               </div>
               <!-- End Input -->
@@ -36,28 +34,21 @@
               <!-- Input -->
               <div class="js-form-message mb-4">
                 <div class="d-flex justify-content-between align-items-center">
-                  <label class="h6 small d-block text-uppercase">Password</label>
+                  <label class="h6 small d-block text-uppercase">Senha</label>
 
-                  <div class="mb-2">
-                    <a class="small u-link-muted" href="recover-account.html">Forgot Password?</a>
-                  </div>
                 </div>
 
                 <div class="js-focus-state input-group u-form">
-                  <input type="password" class="form-control u-form__input" name="password" required="" placeholder="********" aria-label="********" data-msg="Your password is invalid. Please try again." data-error-class="u-has-error" data-success-class="u-has-success">
+                  <input type="password" class="form-control u-form__input" name="password" required placeholder="Senha" aria-label="Senha" value="{{ form.password }}"/>
                 </div>
               </div>
               <!-- End Input -->
 
               <!-- Button -->
               <div class="row align-items-center mb-5">
-                <div class="col-6">
-                  <span class="small text-muted">Don't have an account?</span>
-                  <a class="small" href="signup-simple.html">Signup</a>
-                </div>
 
                 <div class="col-6 text-right">
-                  <button type="submit" class="btn btn-primary u-btn-primary transition-3d-hover">Get Started</button>
+                  <button type="submit" class="btn btn-primary u-btn-primary transition-3d-hover">Login</button>
                 </div>
               </div>
               <!-- End Button -->
@@ -70,33 +61,4 @@
     <!-- End Form -->
   </main>
 
-  
-<div class="card form-signin ">
-    <div class="card-block">
-        <h4 class="card-title">
-            Please sign in
-        </h4>
-        {% include 'flash.twig' %}
-        {% set form = flash('form') %}
-        <form  class="card-text" method="post">
-            <label for="inputEmail" class="sr-only">
-                Email address
-            </label>
-            <input type="text" name="username" id="inputEmail" class="form-control" placeholder="User Name" required="" autofocus="" value="{{ form.username }}"/>
-            <label for="inputPassword"  class="sr-only">
-                Password
-            </label>
-            <input type="password"  name="password" id="inputPassword" class="form-control" placeholder="Password" required=""  value="{{ form.password }}"/>
-
-            <label class="custom-control custom-checkbox">
-  <input type="checkbox" class="custom-control-input" value="1" name="remember">
-  <span class="custom-control-indicator"></span>
-  <span class="custom-control-description">Remember me</span>
-</label>
-            <button class="btn btn-lg btn-primary " type="submit">
-                Sign in
-            </button>
-        </form>
-    </div>
-</div>
 {% endblock %}
