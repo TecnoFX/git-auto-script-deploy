@@ -187,13 +187,7 @@
 				<!-- Title -->
 				<div class="mb-4">
 				  <h3 class="h5 mb-1"></h3>
-				  <p class="font-size-14">{% if project.last_hook_time!='0000-00-00 00:00:00' %}
-				  <div>
-					  Última implantação em <strong>{{project.last_hook_time |date("d M Y h:i:s a")}} foi <strong class="{{project.last_hook_status?'text-success':'text-danger'}}">{{project.last_hook_status?'bem sucedida':'mal sucedida'}} </strong> e levou  <strong>{{project.last_hook_duration|round}} sgundos</strong>
-					  <div><a data-toggle="modal" data-target="#deploy_log_modal" href="#" data-project-id="{{project.id}}">Ver Log
-				  <textarea style="display:none" id="project_{{project.id}}">{{project.last_hook_log}}</textarea></div>
-				  </div>
-				   {%endif%}</p>
+
 				</div>
 				<!-- End Title -->
 				<h4 class="h6 font-weight-normal mb-1">{{ attribute(project_status, project.status) }}</h4>
@@ -273,7 +267,13 @@
                 <!-- Title -->
                 <div class="mb-3">
                   <h3 class="h5 mb-1">{{ project.name }}<strong class="text-info"> @ {{ attribute(project_types, project.type) }}</strong></h3>
-                  <p class="font-size-14">The time has come to bring those ideas and plans to life.</p>
+				  <p class="font-size-14">{% if project.last_hook_time!='0000-00-00 00:00:00' %}
+				  <div>
+					  Última implantação em <strong>{{project.last_hook_time |date("d M Y h:i:s a")}} foi <strong class="{{project.last_hook_status?'text-success':'text-danger'}}">{{project.last_hook_status?'bem sucedida':'mal sucedida'}} </strong> e levou  <strong>{{project.last_hook_duration|round}} sgundos</strong>
+					  <div><a data-toggle="modal" data-target="#deploy_log_modal" href="#" data-project-id="{{project.id}}">Ver Log
+				  <textarea style="display:none" id="project_{{project.id}}">{{project.last_hook_log}}</textarea></div>
+				  </div>
+				   {%endif%}</p>
                 </div>
                 <!-- End Title -->
 
@@ -281,29 +281,9 @@
                   <!-- Members List -->
                   <div class="mb-3 mb-sm-0 mr-4">
                     <h4 class="small font-weight-normal text-secondary mb-0">Members</h4>
+					<span class="fa fa-arrow-up text-warning font-size-13"></span>
+                    <span class="text-dark">Medium</span>
 
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item mr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="Sean Lewis">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img1.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="James Collins">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img2.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliza Donovan">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img3.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cler Lockhart">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img5.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="Josephina Mack">
-                        <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img4.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item ml-offset-3 mr-0">
-                        <a class="u-icon u-icon-light u-icon--sm rounded-circle" href="#">
-                          <span class="u-icon__inner">+3</span>
-                        </a>
-                      </li>
-                    </ul>
                   </div>
                   <!-- End Members List -->
 
