@@ -45,12 +45,12 @@
 <div class="card form-project ">
     <div class="card-block">
         <h4 class="card-title ">
-            Project Search
+            Buscar Projeto
         </h4>
         <form method="post" action="{{urlFor('project_search')}}">
             <div class="form-group ">
                 <label for="search_text"  >
-                    Search text
+                    Buscar
                 </label>
 
                     <input class="form-control" type="text" value="{{query.search_text}}" id="search_text" name="search_text"/>
@@ -58,7 +58,7 @@
             </div>
             <div class="form-group">
                 <label for="project_status"  >
-                    Project status
+                    Status do Projeto
                 </label>
 
                 <select   class="form-control " name="project_status" id="project_status"    >
@@ -74,7 +74,7 @@
             </div>
             <div class="form-group">
                 <label for="project_type"  >
-                    Project Type
+                    Tipo do Projeto
                 </label>
 
                 <select   class="form-control" name="project_type" id="project_type"    >
@@ -89,10 +89,10 @@
                 </select>
             </div>
              <button class="btn btn-lg btn-primary " type="submit" name="search">
-                Search
+                Buscar
             </button>
             <button class="btn btn-lg btn-info " type="submit" name="reset">
-                Reset
+                Limpar filtro
             </button>
         </form>
     </div>
@@ -135,7 +135,7 @@
             <tbody>
               {% if pager.pagination.count==0 %}
                 <tfoot><tr> <td colspan="4" class="text-info text-center">Sorry no projects found. <a  class="btn btn-info btn-sm" href="{{ urlFor('project_form') }}">
-                Create project
+                Criar Projeto
             </a></td> </tr></tfoot>
 
                {% else %}
@@ -147,7 +147,7 @@
 
                         {% if project.last_hook_time!='0000-00-00 00:00:00' %}
                         <div>
-                            Última implantação em <strong>{{project.last_hook_time |date("d M Y h:i:s a")}} foi <strong class="{{project.last_hook_status?'text-success':'text-danger'}}">{{project.last_hook_status?'bem sucedido':'mal sucedido'}} </strong> e levou  <strong>{{project.last_hook_duration|round}} sgundos</strong>
+                            Última implantação em <strong>{{project.last_hook_time |date("d M Y h:i:s a")}} foi <strong class="{{project.last_hook_status?'text-success':'text-danger'}}">{{project.last_hook_status?'bem sucedida':'mal sucedida'}} </strong> e levou  <strong>{{project.last_hook_duration|round}} sgundos</strong>
                             <div><a data-toggle="modal" data-target="#deploy_log_modal" href="#" data-project-id="{{project.id}}">Ver Log
                         <textarea style="display:none" id="project_{{project.id}}">{{project.last_hook_log}}</textarea></div>
                         </div>
@@ -167,12 +167,12 @@
 
                       <div class="dropdown ">
   <a class="btn-sm btn btn-secondary dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Action
+    Ação
   </a>
 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="{{ urlFor('project_form',{'id':project.id}) }}">Edit</a>
-    <a class="dropdown-item project_delete" href="#" data-id="{{project.id}}" >Delete</a>
+    <a class="dropdown-item" href="{{ urlFor('project_form',{'id':project.id}) }}">Editar</a>
+    <a class="dropdown-item project_delete" href="#" data-id="{{project.id}}" >Excluir</a>
    </div>
 </div>
 
@@ -196,8 +196,8 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Last Deployment log</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title">Log da última implantação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
