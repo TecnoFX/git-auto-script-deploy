@@ -6,7 +6,7 @@ use Slim\Http\Response;
 
 class ProjectsController
 {
-    private $db, $flash, $router, $view, $paging, $utils, $project_types, $project_status, $auth;
+    private $db, $flash, $router, $view, $paging, $utils, $project_types,$project_types2 , $project_status, $auth;
 
     public function __construct($view, $db, $flash, $router, $paging, $session, $utils, $auth)
     {
@@ -20,6 +20,7 @@ class ProjectsController
         $this->auth    = $auth;
 
         $this->project_types  = ['gh' => 'GitHub', 'bb' => 'BitBucket','gl'=>'GitLab'];
+		$this->project_types2  = ['gh' => 'github', 'bb' => 'bitbucket','gl'=>'gitlab'];
         $this->project_status = [0 => 'Inativo', 1 => 'Ativo'];
 
     }
