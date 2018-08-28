@@ -164,9 +164,7 @@
 			  <!-- End List of Icons -->
 
 			  <div class="text-center">
-				  <span class="u-icon u-icon-secondary--air u-icon--xl rounded-circle mb-3">
-					<span class="fa fa-{{ attribute(project_types, project.type) }} u-icon__inner font-size-32"></span>
-				  </span>
+
 
 				<!-- Title -->
 				<div class="mb-4">
@@ -245,7 +243,7 @@
             <!-- Details -->
             <div class="d-sm-flex">
 				<span class="u-icon u-icon-secondary mb-3 mb-sm-0--air u-icon--xl rounded-circle mr-3">
-				  <span class="fa fa-briefcase u-icon__inner font-size-32"></span>
+				  <span class="fa fa-{{ attribute(project_types, project.type) }} u-icon__inner font-size-32"></span>
 				</span>
 
               <div class="mr-3">
@@ -266,7 +264,7 @@
                   <!-- Members List -->
                   <div class="mb-3 mb-sm-0 mr-4">
                     <h4 class="small font-weight-normal text-secondary mb-0">Status</h4>
-					<span class="fa fa-arrow-up text-warning font-size-13"></span>
+					<span class="fa text-warning font-size-13"></span>
                     <span class="text-dark">{{ attribute(project_status, project.status) }}</span>
 
                   </div>
