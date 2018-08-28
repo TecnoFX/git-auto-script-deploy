@@ -940,7 +940,7 @@
               </li>
               <!-- End Shop -->
 
-              <!-- Starter - Link -->
+			  <!-- Starter - Link -->
               <li class="nav-item">
                 <a class="nav-link u-header__nav-link" href="../../starter/index.html">
                   Starter
@@ -948,12 +948,70 @@
               </li>
               <!-- End Starter - Link -->
 
-              <!-- Button -->
-              <li class="nav-item d-none d-md-inline-block pl-3 pr-0">
-                <a class="btn btn-sm btn-primary u-btn-primary transition-3d-hover" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">
-                  Buy Now
+			  <!-- Starter - Link -->
+              <li class="nav-item">
+                <a class="nav-link u-header__nav-link" href="../../starter/index.html">
+                  Starter
                 </a>
               </li>
+              <!-- End Starter - Link -->
+
+			  <!-- Starter - Link -->
+              <li class="nav-item">
+                <a class="nav-link u-header__nav-link" href="../../starter/index.html">
+                  Starter
+                </a>
+              </li>
+              <!-- End Starter - Link -->
+
+			  <!-- Starter - Link -->
+              <li class="nav-item">
+                <a class="nav-link u-header__nav-link" href="../../starter/index.html">
+                  Starter
+                </a>
+              </li>
+              <!-- End Starter - Link -->
+
+			  <nav class="pink-skin navbar navbar-toggleable-md navbar-inverse   fixed-top">
+		  		<div class="collapse navbar-collapse" id="navbarNav">
+		  			<ul class="navbar-nav ml-auto">
+
+		  				<li class="nav-item">
+		  					<a class="nav-link active" href="{{ urlFor('projects') }}">
+		  						Projetos
+		  					</a>
+		  				</li>
+		  				<li class="nav-item dropdown">
+		  					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+		  						{{ auth_user.username }}
+		  					</a>
+		  					<div class="dropdown-menu">
+		  							<a class="dropdown-item" href="{{ urlFor('profile') }}">
+		  							Perfil
+		  						</a>
+		  						<a class="dropdown-item" href="{{ urlFor('settings') }}">
+		  							Configurações
+		  						</a>
+		  						<a class="dropdown-item" href="{{ urlFor('logout') }}">
+		  							Sair
+		  						</a>
+		  					</div>
+		  				</li>
+		  				{%endif%}
+		  			</ul>
+		  		</div>
+		  	</nav>
+
+
+              <!-- Button -->
+			  {% if not loggedin %}
+			  <li class="nav-item d-none d-md-inline-block pl-3 pr-0">
+                <a class="btn btn-sm btn-primary u-btn-primary transition-3d-hover" href="{{ urlFor('login') }}" target="_blank">
+                  Login
+                </a>
+              </li>
+			  {%else%}
+
               <!-- End Button -->
             </ul>
           </div>
