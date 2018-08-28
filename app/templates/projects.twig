@@ -32,7 +32,7 @@
               <!-- End Breadcrumb Nav Toggle Button -->
             </div>
           </div>
-		  
+
         </div>
       </div>
 
@@ -126,22 +126,6 @@
     </div>
     <!-- End Breadcrumb Section -->
 
-	<div class="card form-project ">
-	    <div class="card-block">
-
-
-	        <table class="table table-responsive1 table-hover">
-	            <tbody>
-
-	                <form method="post" id="frm_delete" action="{{urlFor('project_delete')}}"><input type="hidden" name="id" id="delete_id"></form>
-	            </tbody>
-
-	            <tfoot><tr> <td colspan="4" class="text-info">{{ pager.paging|raw }}</td> </tr></tfoot>
-
-
-	        </table>
-	    </div>
-	</div>
 
 	<div class="modal fade" id="deploy_log_modal">
 	  <div class="modal-dialog" role="document">
@@ -161,46 +145,6 @@
 	    </div>
 	  </div>
 	</div>
-
-
-
-	<script>
-
-	$(function()
-	{
-
-	$('#deploy_log_modal').on('show.bs.modal', function (event) {
-	       var modal = $(this)
-
-	  var id =  $(event.relatedTarget).data('project-id') // Button that triggered the modal
-	 var log=nl2br($('#project_'+id).text());
-
-	   modal.find('.modal-title').text('Último log de implantação para o projeto ' + id)
-
-	  modal.find('.modal-body').html( log?log:'No content')
-	})
-
-
-
-	    $( ".project_delete" ).on( "click", function(){
-
-	    	  if(!confirm('Are you sure?'))
-	    	  {
-	    	  	return false;
-	    	  }
-
-			$( '#delete_id' ).val($( this ).data('id'));
-
-	    	  $( '#frm_delete' ).submit();
-	    	  return false;
-	    } );
-
-	});
-	function nl2br (str, is_xhtml) {
-	    var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
-	    return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
-	}
-	</script>
 
 
     <!-- Content Section -->
@@ -275,11 +219,11 @@
                   <div class="col-6 text-right">
                     <!-- Settings -->
                     <div class="position-relative">
-                      <a id="settingsDropdown1Invoker" class="u-icon u-icon-secondary--air u-icon--sm u-bg-transparent rounded" href="javascript:;" role="button" aria-controls="settingsDropdown1" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#settingsDropdown1" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
+                      <a id="settingsDropdown1Invoker" class="u-icon u-icon-secondary--air u-icon--sm u-bg-transparent rounded" href="javascript:;" role="button" aria-controls="settingsDropdown{{project.id}}" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#settingsDropdown1" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
                         <span class="fa fa-ellipsis-h u-icon__inner"></span>
                       </a>
 
-                      <div id="settingsDropdown1" class="u-unfold right-0 text-left pl-2 mt-2 u-unfold--css-animation u-unfold--hidden fadeOut" aria-labelledby="settingsDropdown1Invoker" style="min-width: 160px; animation-duration: 300ms;">
+                      <div id="settingsDropdown{{project.id}}" class="u-unfold right-0 text-left pl-2 mt-2 u-unfold--css-animation u-unfold--hidden fadeOut" aria-labelledby="settingsDropdown1Invoker" style="min-width: 160px; animation-duration: 300ms;">
                         <a class="u-list__link" href="{{ urlFor('project_form',{'id':project.id}) }}">
                           <span class="fa fa-cogs min-width-6 text-center font-size-13"></span>
                           Editar
@@ -342,6 +286,48 @@
                 <!-- End Budget & Priority -->
               </div>
             </div>
+
+			<form method="post" id="frm_delete" action="{{urlFor('project_delete')}}"><input type="hidden" name="id" id="delete_id"></form>
+			{{ pager.paging|raw }}
+
+			<script>
+
+			$(function()
+			{
+
+			$('#deploy_log_modal').on('show.bs.modal', function (event) {
+			       var modal = $(this)
+
+			  var id =  $(event.relatedTarget).data('project-id') // Button that triggered the modal
+			 var log=nl2br($('#project_'+id).text());
+
+			   modal.find('.modal-title').text('Último log de implantação para o projeto ' + id)
+
+			  modal.find('.modal-body').html( log?log:'No content')
+			})
+
+
+
+			    $( ".project_delete" ).on( "click", function(){
+
+			    	  if(!confirm('Are you sure?'))
+			    	  {
+			    	  	return false;
+			    	  }
+
+					$( '#delete_id' ).val($( this ).data('id'));
+
+			    	  $( '#frm_delete' ).submit();
+			    	  return false;
+			    } );
+
+			});
+			function nl2br (str, is_xhtml) {
+			    var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+			    return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
+			}
+			</script>
+
             <!-- End Projects -->
 
 			{% endfor %}
