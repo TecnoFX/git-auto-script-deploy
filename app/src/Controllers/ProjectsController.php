@@ -6,7 +6,7 @@ use Slim\Http\Response;
 
 class ProjectsController
 {
-    private $db, $flash, $router, $view, $paging, $utils, $project_types,$project_types2 , $project_status, $auth;
+    private $db, $flash, $router, $view, $paging, $utils, $project_types, $project_status, $auth;
 
     public function __construct($view, $db, $flash, $router, $paging, $session, $utils, $auth)
     {
@@ -19,8 +19,7 @@ class ProjectsController
         $this->utils   = $utils;
         $this->auth    = $auth;
 
-        $this->project_types  = ['gh' => 'GitHub', 'bb' => 'BitBucket','gl'=>'GitLab'];
-		$this->project_types2  = ['gh' => 'github', 'bb' => 'bitbucket','gl'=>'gitlab'];
+        $this->project_types  = ['gh' => 'github', 'bb' => 'bitbucket','gl'=>'gitlab'];
         $this->project_status = [0 => 'Inativo', 1 => 'Ativo'];
 
     }
@@ -36,7 +35,7 @@ class ProjectsController
             $dbQuery = $dbQuery->where('name', "=", $params['query']['search_text']);
 
         }
-		if (isset($params['query']['project_type']) && $params['query']['project_type'])
+        if (isset($params['query']['project_type']) && $params['query']['project_type'])
         {
             $dbQuery = $dbQuery->where('type', "=", $params['query']['project_type']);
 
@@ -62,8 +61,7 @@ class ProjectsController
 
         $params['projects']       = $projecs;
         $params['pager']     = $pagination;
-		$params['project_types']  = $this->project_types;
-        $params['project_types']  = $this->project_types2;
+        $params['project_types']  = $this->project_types;
         $params['project_status'] = $this->project_status;
 
          return $this->view->render($response, 'projects.twig', $params);
