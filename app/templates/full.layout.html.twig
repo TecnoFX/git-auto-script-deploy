@@ -375,28 +375,11 @@ data-hide-effect="slideOutDown">
 <script src="{{ base_url() }}/assets/js/helpers/hs.focus-state.js"></script>
 <script src="{{ base_url() }}/assets/js/components/hs.modal-window.js"></script>
 <script src="{{ base_url() }}/assets/js/components/hs.selectpicker.js"></script>
-<script src="{{ base_url() }}/assets/js/components/hs.range-datepicker.js"></script>
 <script src="{{ base_url() }}/assets/js/components/hs.go-to.js"></script>
 
 <!-- JS Plugins Init. -->
 <script>
 $(window).on('load', function () {
-// initialization of HSMegaMenu component
-$('.js-mega-menu').HSMegaMenu({
-event: 'hover',
-pageContainer: $('.container'),
-breakpoint: 767,
-hideTimeOut: 0
-});
-
-// initialization of HSMegaMenu component
-$('.js-breadcrumb-menu').HSMegaMenu({
-event: 'hover',
-pageContainer: $('.container'),
-breakpoint: 991,
-hideTimeOut: 0
-});
-});
 
 $(document).on('ready', function () {
 // initialization of header
@@ -422,9 +405,6 @@ autonomous: true
 
 // initialization of select picker
 $.HSCore.components.HSSelectPicker.init('.js-select');
-
-// initialization of range datepicker
-$.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
 
 // initialization of go to
 $.HSCore.components.HSGoTo.init('.js-go-to');
