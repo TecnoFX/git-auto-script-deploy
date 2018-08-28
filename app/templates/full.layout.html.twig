@@ -1,82 +1,185 @@
 <!DOCTYPE html>
 <html lang="pt_BR">
-    <head>
-        <title>
-            {% block title %}Git Script Deploy{% endblock %}
-        </title>
-        <meta charset="UTF-8"/>
-        <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport"/>
-        <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i" rel="stylesheet"/>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-        <!-- add material css | replace bootstrap.css -->
-        <link href="{{ base_url() }}/assets/css/material.min.css" rel="stylesheet"/>
-        <link href="{{ base_url() }}/assets/css/style.css" rel="stylesheet"/>
-        {% block head %}{% endblock %}
-    </head>
-    <body>
-        <nav class="pink-skin navbar navbar-toggleable-md navbar-inverse   fixed-top">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">
-                </span>
-            </button>
-            <a class="navbar-brand" href="{{ urlFor('projects') }}">
-                <img style="height: 42px;" src="/assets/images/logo.svg"/>
-            </a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    {% if not loggedin %}
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ urlFor('login') }}">
-                            Login
-                        </a>
-                    </li>
-                    {%else%}
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ urlFor('projects') }}">
-                            Projetos
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                            {{ auth_user.username }}
-                        </a>
-                        <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ urlFor('profile') }}">
-                                Perfil
-                            </a>
-                            <a class="dropdown-item" href="{{ urlFor('settings') }}">
-                                Configurações
-                            </a>
-                            <a class="dropdown-item" href="{{ urlFor('logout') }}">
-                                Sair
-                            </a>
-                        </div>
-                    </li>
-                    {%endif%}
-                </ul>
-            </div>
-        </nav>
-        <div class="container">
-            <div class="row ">
-                <div class="col-lg-12">
-                    {% block body %}{% endblock %}
-                </div>
-            </div>
-        </div>
-        <footer class="footer sticky-footer9" style="padding-top: 20px;">
-            <div class="container-fluid text-center">
+<head>
+	<title>
+		{% block title %}Git Script Deploy{% endblock %}
+	</title>
+<!-- Required Meta Tags Always Come First -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-                    © <a href="https://tecnofx.com">Scrip Deploy</a> {{ "now"|date("Y") }} <a href="https://github.com/TecnoFX/git-auto-script-deploy">git-auto-script-deploy</a>
+<!-- Favicon -->
+<link rel="shortcut icon" href="/favicon.ico">
+
+<!-- Google Fonts -->
+<link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
 
 
-            </div>
-        </footer>
-        <!-- js -->
-        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-        <!-- add material js on top of bootstrap.js -->
-        <script src="{{ base_url() }}/assets/js/material.min.js"></script>
-        {% block foot %}{% endblock %}
-    </body>
+<!-- CSS Global Compulsory -->
+<link rel="stylesheet" href="{{ base_url() }}/assets/vendor/bootstrap/css/bootstrap.css">
+
+<!-- CSS Implementing Plugins -->
+<link rel="stylesheet" href="{{ base_url() }}/assets/vendor/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="{{ base_url() }}/assets/vendor/custombox/dist/custombox.min.css">
+<link rel="stylesheet" href="{{ base_url() }}/assets/vendor/animate.css/animate.min.css">
+<link rel="stylesheet" href="{{ base_url() }}/assets/vendor/hs-megamenu/src/hs.megamenu.css">
+<link rel="stylesheet" href="{{ base_url() }}/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" href="{{ base_url() }}/assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="{{ base_url() }}/assets/vendor/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="{{ base_url() }}/assets/vendor/bootstrap-tagsinput/css/bootstrap-tagsinput.css">
+
+
+<!-- CSS Front Template -->
+<link rel="stylesheet" href="{{ base_url() }}/assets/css/front.css">
+
+{% block head %}{% endblock %}
+
+</head>
+
+<body>
+	<nav class="pink-skin navbar navbar-toggleable-md navbar-inverse   fixed-top">
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon">
+			</span>
+		</button>
+		<a class="navbar-brand" href="{{ urlFor('projects') }}">
+			<img style="height: 42px;" src="/assets/images/logo.svg"/>
+		</a>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+				{% if not loggedin %}
+				<li class="nav-item">
+					<a class="nav-link active" href="{{ urlFor('login') }}">
+						Login
+					</a>
+				</li>
+				{%else%}
+				<li class="nav-item">
+					<a class="nav-link active" href="{{ urlFor('projects') }}">
+						Projetos
+					</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+						{{ auth_user.username }}
+					</a>
+					<div class="dropdown-menu">
+							<a class="dropdown-item" href="{{ urlFor('profile') }}">
+							Perfil
+						</a>
+						<a class="dropdown-item" href="{{ urlFor('settings') }}">
+							Configurações
+						</a>
+						<a class="dropdown-item" href="{{ urlFor('logout') }}">
+							Sair
+						</a>
+					</div>
+				</li>
+				{%endif%}
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row ">
+			<div class="col-lg-12">
+				{% block body %}{% endblock %}
+			</div>
+		</div>
+	</div>
+
+	{% block foot %}{% endblock %}
+
+
+<!-- Go to Top -->
+<a class="js-go-to u-go-to" href="#"
+data-position='{"bottom": 15, "right": 15 }'
+data-type="fixed"
+data-offset-top="400"
+data-compensation="#header"
+data-show-effect="slideInUp"
+data-hide-effect="slideOutDown">
+<span class="fa fa-arrow-up u-go-to__inner"></span>
+</a>
+<!-- End Go to Top -->
+
+<!-- JS Global Compulsory -->
+<script src="{{ base_url() }}/assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="{{ base_url() }}/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+<script src="{{ base_url() }}/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+<script src="{{ base_url() }}/assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+<!-- JS Implementing Plugins -->
+<script src="{{ base_url() }}/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+<script src="{{ base_url() }}/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="{{ base_url() }}/assets/vendor/custombox/dist/custombox.min.js"></script>
+<script src="{{ base_url() }}/assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+<script src="{{ base_url() }}/assets/vendor/flatpickr/dist/flatpickr.min.js"></script>
+<script src="{{ base_url() }}/assets/vendor/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
+
+<!-- JS Front -->
+<script src="{{ base_url() }}/assets/js/hs.core.js"></script>
+<script src="{{ base_url() }}/assets/js/components/hs.header.js"></script>
+<script src="{{ base_url() }}/assets/js/components/hs.unfold.js"></script>
+<script src="{{ base_url() }}/assets/js/components/hs.malihu-scrollbar.js"></script>
+<script src="{{ base_url() }}/assets/js/helpers/hs.focus-state.js"></script>
+<script src="{{ base_url() }}/assets/js/components/hs.modal-window.js"></script>
+<script src="{{ base_url() }}/assets/js/components/hs.selectpicker.js"></script>
+<script src="{{ base_url() }}/assets/js/components/hs.range-datepicker.js"></script>
+<script src="{{ base_url() }}/assets/js/components/hs.go-to.js"></script>
+
+<!-- JS Plugins Init. -->
+<script>
+$(window).on('load', function () {
+// initialization of HSMegaMenu component
+$('.js-mega-menu').HSMegaMenu({
+event: 'hover',
+pageContainer: $('.container'),
+breakpoint: 767,
+hideTimeOut: 0
+});
+
+// initialization of HSMegaMenu component
+$('.js-breadcrumb-menu').HSMegaMenu({
+event: 'hover',
+pageContainer: $('.container'),
+breakpoint: 991,
+hideTimeOut: 0
+});
+});
+
+$(document).on('ready', function () {
+// initialization of header
+$.HSCore.components.HSHeader.init($('#header'));
+
+// initialization of unfold component
+$.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+afterOpen: function () {
+$(this).find('input[type="search"]').focus();
+}
+});
+
+// initialization of malihu scrollbar
+$.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+// initialization of forms
+$.HSCore.helpers.HSFocusState.init();
+
+// initialization of autonomous popups
+$.HSCore.components.HSModalWindow.init('[data-modal-target]', '.js-add-project-window', {
+autonomous: true
+});
+
+// initialization of select picker
+$.HSCore.components.HSSelectPicker.init('.js-select');
+
+// initialization of range datepicker
+$.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
+
+// initialization of go to
+$.HSCore.components.HSGoTo.init('.js-go-to');
+});
+</script>
+
+{% block foot %}{% endblock %}
+</body>
 </html>
