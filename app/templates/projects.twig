@@ -275,8 +275,8 @@
 {% endblock %}
 {% block foot %}
 
-
-<div id="addProjectModal" class="js-add-project-window u-modal-window bg-transparent" style="width: 680px;">
+<!-- Create Project Modal Window -->
+  <div id="addProjectModal" class="js-add-project-window u-modal-window bg-transparent" style="width: 680px;">
     <form class="bg-white rounded mb-9">
       <!-- Header -->
       <header class="row justify-content-between align-items-center no-gutters u-bg-light-blue-50 rounded-top py-3 px-5">
@@ -291,23 +291,34 @@
           <!-- Icons -->
           <ul class="list-inline mb-0">
             <li class="list-inline-item mr-0">
-              <a class="u-icon u-icon-secondary--air u-icon--sm u-bg-transparent" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Give feedback">
+              <a class="u-icon u-icon-secondary--air u-icon--sm u-bg-transparent" href="#" data-toggle="tooltip" data-placement="top" title="Give feedback">
                 <span class="fa fa-bullhorn u-icon__inner"></span>
               </a>
             </li>
             <li class="list-inline-item mr-0">
-              <a class="u-icon u-icon-secondary--air u-icon--sm u-bg-transparent" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Unwatch">
+              <a class="u-icon u-icon-secondary--air u-icon--sm u-bg-transparent" href="#" data-toggle="tooltip" data-placement="top" title="Unwatch">
                 <span class="fa fa-eye-slash u-icon__inner"></span>
               </a>
             </li>
             <li class="list-inline-item mr-0">
               <!-- Settings Dropdown -->
               <div class="position-relative">
-                <a id="createProjectSettingsDropdown1Invoker" class="u-icon u-icon-secondary--air u-icon--sm u-bg-transparent" href="javascript:;" role="button" aria-controls="createProjectSettingsDropdown1" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#createProjectSettingsDropdown1" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
+                <a id="createProjectSettingsDropdown1Invoker" class="u-icon u-icon-secondary--air u-icon--sm u-bg-transparent" href="javascript:;" role="button"
+                   aria-controls="createProjectSettingsDropdown1"
+                   aria-haspopup="true"
+                   aria-expanded="false"
+                   data-unfold-event="click"
+                   data-unfold-target="#createProjectSettingsDropdown1"
+                   data-unfold-type="css-animation"
+                   data-unfold-duration="300"
+                   data-unfold-delay="300"
+                   data-unfold-hide-on-scroll="true"
+                   data-unfold-animation-in="slideInUp"
+                   data-unfold-animation-out="fadeOut">
                   <span class="fa fa-ellipsis-h u-icon__inner"></span>
                 </a>
 
-                <div id="createProjectSettingsDropdown1" class="u-unfold right-0 text-left mt-2 u-unfold--css-animation u-unfold--hidden fadeOut" aria-labelledby="createProjectSettingsDropdown1Invoker" style="min-width: 160px; animation-duration: 300ms; right: 0px;">
+                <div id="createProjectSettingsDropdown1" class="u-unfold right-0 text-left mt-2" aria-labelledby="createProjectSettingsDropdown1Invoker" style="min-width: 160px;">
                   <a class="u-list__link" href="#">Log time</a>
                   <a class="u-list__link" href="#">Add flag</a>
                   <a class="u-list__link" href="#">Move</a>
@@ -340,17 +351,17 @@
 
           <ul class="list-inline text-sm-right mb-0">
             <li class="list-inline-item mr-0">
-              <a class="u-icon u-icon-secondary--air u-icon--sm" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add attach">
+              <a class="u-icon u-icon-secondary--air u-icon--sm" href="#" data-toggle="tooltip" data-placement="top" title="Add attach">
                 <span class="fa fa-paperclip u-icon__inner"></span>
               </a>
             </li>
             <li class="list-inline-item mr-0">
-              <a class="u-icon u-icon-secondary--air u-icon--sm" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Create subtask">
+              <a class="u-icon u-icon-secondary--air u-icon--sm" href="#" data-toggle="tooltip" data-placement="top" title="Create subtask">
                 <span class="fa fa-clone u-icon__inner"></span>
               </a>
             </li>
             <li class="list-inline-item mr-0">
-              <a class="u-icon u-icon-secondary--air u-icon--sm" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Link issue">
+              <a class="u-icon u-icon-secondary--air u-icon--sm" href="#" data-toggle="tooltip" data-placement="top" title="Link issue">
                 <span class="fa fa-link u-icon__inner"></span>
               </a>
             </li>
@@ -363,69 +374,77 @@
           <div class="col-sm-3 mb-3 mb-sm-0">
             <label class="d-block small text-uppercase font-weight-medium">Status</label>
             <!-- Select -->
-            <div class="dropdown bootstrap-select js-select u-select" style="width: 100%;"><select class="js-select u-select" data-width="100%" data-style="u-btn-primary--air btn-sm" tabindex="-98">
+            <select class="js-select u-select" data-width="100%" data-style="u-btn-primary--air btn-sm">
               <option value="toDo">To Do</option>
               <option value="inProgress">In Progress</option>
               <option value="done">Done</option>
-            </select><button type="button" class="btn dropdown-toggle u-btn-primary--air btn-sm" data-toggle="dropdown" role="button" title="To Do" aria-expanded="false"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">To Do</div></div> </div></button><div class="dropdown-menu" role="combobox" style="max-height: 312px; overflow: hidden; min-height: 0px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 165px, 0px);" x-placement="bottom-start" x-out-of-boundaries=""><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1" style="max-height: 280px; overflow-y: auto; min-height: 0px;"><ul class="dropdown-menu inner show"><li class="selected active"><a role="option" class="dropdown-item selected active" aria-disabled="false" tabindex="0" aria-selected="true"><span class=" bs-ok-default check-mark"></span><span class="text">To Do</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="text">In Progress</span></a></li><li><a role="option" class="dropdown-item" aria-disabled="false" tabindex="0" aria-selected="false"><span class=" bs-ok-default check-mark"></span><span class="text">Done</span></a></li></ul></div></div></div>
+            </select>
             <!-- End Select -->
           </div>
 
           <div class="col-6 col-sm">
             <label class="d-block small text-uppercase font-weight-medium">Assignee</label>
             <!-- Select -->
-            <div class="dropdown bootstrap-select js-select u-select" style="width: 100%;"><select class="js-select u-select" title="Add assignee" data-width="100%" data-style="btn-sm bg-transparent text-secondary font-weight-normal px-0" data-live-search="true" data-searchbox-classes="input-group-sm" tabindex="-98"><option class="bs-title-option" value=""></option>
-              <option value="assignee1" data-tokens="user1" data-content="
-                <span class=&quot;d-flex align-items-center&quot;>
-                  <img class=&quot;u-xs-avatar rounded-circle mr-2&quot; src=&quot;../../assets/img/32x32/img9.jpg&quot; alt=&quot;Image Description&quot;>
+            <select class="js-select u-select" title="Add assignee"
+                    data-width="100%"
+                    data-style="btn-sm bg-transparent text-secondary font-weight-normal px-0"
+                    data-live-search="true"
+                    data-searchbox-classes="input-group-sm">
+              <option value="assignee1" data-tokens="user1" data-content='
+                <span class="d-flex align-items-center">
+                  <img class="u-xs-avatar rounded-circle mr-2" src="../../assets/img/32x32/img9.jpg" alt="Image Description">
                   <span>Sebastian Diaz</span>
-                </span>">
+                </span>'>
                 Sebastian Diaz
               </option>
-              <option value="assignee2" data-tokens="user2" data-content="
-                <span class=&quot;d-flex align-items-center&quot;>
-                  <img class=&quot;u-xs-avatar rounded-circle mr-2&quot; src=&quot;../../assets/img/32x32/img7.jpg&quot; alt=&quot;Image Description&quot;>
+              <option value="assignee2" data-tokens="user2" data-content='
+                <span class="d-flex align-items-center">
+                  <img class="u-xs-avatar rounded-circle mr-2" src="../../assets/img/32x32/img7.jpg" alt="Image Description">
                   <span>Eliza Donovan</span>
-                </span>">
+                </span>'>
                 Eliza Donovan
               </option>
-              <option value="assignee3" data-tokens="user3" data-content="
-                <span class=&quot;d-flex align-items-center&quot;>
-                  <img class=&quot;u-xs-avatar rounded-circle mr-2&quot; src=&quot;../../assets/img/32x32/img6.jpg&quot; alt=&quot;Image Description&quot;>
+              <option value="assignee3" data-tokens="user3" data-content='
+                <span class="d-flex align-items-center">
+                  <img class="u-xs-avatar rounded-circle mr-2" src="../../assets/img/32x32/img6.jpg" alt="Image Description">
                   <span>Cameron Brown</span>
-                </span>">
+                </span>'>
                 Cameron Brown
               </option>
-            </select><button type="button" class="btn dropdown-toggle bs-placeholder btn-sm bg-transparent text-secondary font-weight-normal px-0" data-toggle="dropdown" role="button" title="Add assignee"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Add assignee</div></div> </div></button><div class="dropdown-menu " role="combobox"><div class="bs-searchbox input-group-sm"><input type="text" class="form-control" autocomplete="off" role="textbox" aria-label="Search"></div><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+            </select>
             <!-- End Select -->
           </div>
 
           <div class="col-6 col-sm">
             <label class="d-block small text-uppercase font-weight-medium">Choose project</label>
             <!-- Select -->
-            <div class="dropdown bootstrap-select js-select u-select u-select--right" style="width: 100%;"><select class="js-select u-select u-select--right" title="Choose project" data-width="100%" data-style="btn-sm bg-transparent text-secondary font-weight-normal px-0" data-live-search="true" data-searchbox-classes="input-group-sm" tabindex="-98"><option class="bs-title-option" value=""></option>
-              <option value="project1" data-content="
-                <span class=&quot;d-flex align-items-center&quot;>
-                  <img class=&quot;u-xs-avatar rounded-circle mr-2&quot; src=&quot;../../assets/img/32x32/img11.jpg&quot; alt=&quot;Image Description&quot;>
+            <select class="js-select u-select u-select--right" title="Choose project"
+                    data-width="100%"
+                    data-style="btn-sm bg-transparent text-secondary font-weight-normal px-0"
+                    data-live-search="true"
+                    data-searchbox-classes="input-group-sm">
+              <option value="project1" data-content='
+                <span class="d-flex align-items-center">
+                  <img class="u-xs-avatar rounded-circle mr-2" src="../../assets/img/32x32/img11.jpg" alt="Image Description">
                   <span>Slack</span>
-                </span>">
+                </span>'>
                 Slack
               </option>
-              <option value="project2" data-content="
-                <span class=&quot;d-flex align-items-center&quot;>
-                  <img class=&quot;u-xs-avatar rounded-circle mr-2&quot; src=&quot;../../assets/img/32x32/img12.jpg&quot; alt=&quot;Image Description&quot;>
+              <option value="project2" data-content='
+                <span class="d-flex align-items-center">
+                  <img class="u-xs-avatar rounded-circle mr-2" src="../../assets/img/32x32/img12.jpg" alt="Image Description">
                   <span>DropBox</span>
-                </span>">
+                </span>'>
                 DropBox
               </option>
-              <option value="project3" data-content="
-                <span class=&quot;d-flex align-items-center&quot;>
-                  <img class=&quot;u-xs-avatar rounded-circle mr-2&quot; src=&quot;../../assets/img/32x32/img13.jpg&quot; alt=&quot;Image Description&quot;>
+              <option value="project3" data-content='
+                <span class="d-flex align-items-center">
+                  <img class="u-xs-avatar rounded-circle mr-2" src="../../assets/img/32x32/img13.jpg" alt="Image Description">
                   <span>Spotify</span>
-                </span>">
+                </span>'>
                 Spotify
               </option>
-            </select><button type="button" class="btn dropdown-toggle bs-placeholder btn-sm bg-transparent text-secondary font-weight-normal px-0" data-toggle="dropdown" role="button" title="Choose project"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Choose project</div></div> </div></button><div class="dropdown-menu " role="combobox"><div class="bs-searchbox input-group-sm"><input type="text" class="form-control" autocomplete="off" role="textbox" aria-label="Search"></div><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+            </select>
             <!-- End Select -->
           </div>
         </div>
@@ -440,8 +459,8 @@
         <hr class="my-4">
 
         <!-- Assignee -->
-        <div class="d-sm-flex">
-          <div class="mb-3 mb-sm-0 mr-sm-9">
+        <div class="row">
+          <div class="col-sm-5 mb-4 mb-sm-0">
             <label class="d-block small text-uppercase font-weight-medium">Reporter</label>
             <div class="media align-items-center">
               <img class="u-sm-avatar rounded-circle mr-2" src="../../assets/img/100x100/img1.jpg" alt="Image Description">
@@ -451,48 +470,48 @@
             </div>
           </div>
 
-          <div>
+          <div class="col-sm-7">
             <label class="d-block small text-uppercase font-weight-medium">Followers</label>
             <!-- Avatars -->
             <ul class="list-inline mb-0">
               <li class="list-inline-item mb-1 mr-0">
                 <a href="#">
-                  <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img2.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="" data-original-title="Patrick Garner">
+                  <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img2.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="Patrick Garner">
                 </a>
               </li>
               <li class="list-inline-item ml-offset-3 mb-1 mr-0">
                 <a href="#">
-                  <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img3.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="" data-original-title="Amanta Owens">
+                  <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img3.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="Amanta Owens">
                 </a>
               </li>
               <li class="list-inline-item ml-offset-3 mb-1 mr-0">
                 <a href="#">
-                  <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img4.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliza Donovan">
+                  <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img4.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
                 </a>
               </li>
               <li class="list-inline-item ml-offset-3 mb-1 mr-0">
                 <a href="#">
-                  <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img5.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cler Lockhart">
+                  <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img5.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="Cler Lockhart">
                 </a>
               </li>
               <li class="list-inline-item ml-offset-3 mb-1 mr-0">
                 <a href="#">
-                  <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img6.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="" data-original-title="James Collins">
+                  <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img6.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="James Collins">
                 </a>
               </li>
               <li class="list-inline-item ml-offset-3 mb-1 mr-0">
                 <a href="#">
-                  <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img7.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="" data-original-title="Josephina Mack">
+                  <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img7.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="Josephina Mack">
                 </a>
               </li>
               <li class="list-inline-item ml-offset-3 mb-1 mr-0">
                 <a href="#">
-                  <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img8.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="" data-original-title="Sean Lewis">
+                  <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img8.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="Sean Lewis">
                 </a>
               </li>
               <li class="list-inline-item ml-offset-3 mb-1 mr-0">
                 <a href="#">
-                  <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img9.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="" data-original-title="Sebastian Diaz">
+                  <img class="img-fluid u-sm-avatar u-sm-avatar--bordered rounded-circle" src="../../assets/img/32x32/img9.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="Sebastian Diaz">
                 </a>
               </li>
               <li class="list-inline-item ml-offset-3 mb-1 mr-0">
@@ -519,25 +538,23 @@
                   <span class="fa fa-calendar u-form__text-inner"></span>
                 </span>
               </div>
-              <input class="js-range-datepicker form-control u-form__input bg-transparent py-1 px-0 flatpickr-input" type="text" placeholder="Due date" aria-label="Due date" data-rp-wrapper="#datepickerWrapper" data-rp-date-format="d/m/Y" readonly="readonly" style="width: 0px;">
-            <div class="flatpickr-calendar animate" tabindex="-1"><div class="flatpickr-months"><span class="flatpickr-prev-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><div class="flatpickr-month"><div class="flatpickr-current-month"><span class="cur-month">August </span><div class="numInputWrapper"><input class="numInput cur-year" type="text" pattern="\d*" tabindex="-1" aria-label="Year"><span class="arrowUp"></span><span class="arrowDown"></span></div></div></div><span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-innerContainer"><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><div class="flatpickr-weekdaycontainer">
-      <span class="flatpickr-weekday">
-        Mo</span><span class="flatpickr-weekday">Tu</span><span class="flatpickr-weekday">We</span><span class="flatpickr-weekday">Th</span><span class="flatpickr-weekday">Fr</span><span class="flatpickr-weekday">Sa</span><span class="flatpickr-weekday">Su
-      </span>
-      </div></div><div class="flatpickr-days" tabindex="-1"><div class="dayContainer"><span class="flatpickr-day prevMonthDay" aria-label="July 30, 2018" tabindex="-1">30</span><span class="flatpickr-day prevMonthDay" aria-label="July 31, 2018" tabindex="-1">31</span><span class="flatpickr-day " aria-label="August 1, 2018" tabindex="-1">1</span><span class="flatpickr-day " aria-label="August 2, 2018" tabindex="-1">2</span><span class="flatpickr-day " aria-label="August 3, 2018" tabindex="-1">3</span><span class="flatpickr-day " aria-label="August 4, 2018" tabindex="-1">4</span><span class="flatpickr-day " aria-label="August 5, 2018" tabindex="-1">5</span><span class="flatpickr-day " aria-label="August 6, 2018" tabindex="-1">6</span><span class="flatpickr-day " aria-label="August 7, 2018" tabindex="-1">7</span><span class="flatpickr-day " aria-label="August 8, 2018" tabindex="-1">8</span><span class="flatpickr-day " aria-label="August 9, 2018" tabindex="-1">9</span><span class="flatpickr-day " aria-label="August 10, 2018" tabindex="-1">10</span><span class="flatpickr-day " aria-label="August 11, 2018" tabindex="-1">11</span><span class="flatpickr-day " aria-label="August 12, 2018" tabindex="-1">12</span><span class="flatpickr-day " aria-label="August 13, 2018" tabindex="-1">13</span><span class="flatpickr-day " aria-label="August 14, 2018" tabindex="-1">14</span><span class="flatpickr-day " aria-label="August 15, 2018" tabindex="-1">15</span><span class="flatpickr-day " aria-label="August 16, 2018" tabindex="-1">16</span><span class="flatpickr-day " aria-label="August 17, 2018" tabindex="-1">17</span><span class="flatpickr-day " aria-label="August 18, 2018" tabindex="-1">18</span><span class="flatpickr-day " aria-label="August 19, 2018" tabindex="-1">19</span><span class="flatpickr-day " aria-label="August 20, 2018" tabindex="-1">20</span><span class="flatpickr-day " aria-label="August 21, 2018" tabindex="-1">21</span><span class="flatpickr-day " aria-label="August 22, 2018" tabindex="-1">22</span><span class="flatpickr-day " aria-label="August 23, 2018" tabindex="-1">23</span><span class="flatpickr-day " aria-label="August 24, 2018" tabindex="-1">24</span><span class="flatpickr-day " aria-label="August 25, 2018" tabindex="-1">25</span><span class="flatpickr-day " aria-label="August 26, 2018" tabindex="-1">26</span><span class="flatpickr-day " aria-label="August 27, 2018" tabindex="-1">27</span><span class="flatpickr-day today" aria-label="August 28, 2018" aria-current="date" tabindex="-1">28</span><span class="flatpickr-day " aria-label="August 29, 2018" tabindex="-1">29</span><span class="flatpickr-day " aria-label="August 30, 2018" tabindex="-1">30</span><span class="flatpickr-day " aria-label="August 31, 2018" tabindex="-1">31</span><span class="flatpickr-day nextMonthDay" aria-label="September 1, 2018" tabindex="-1">1</span><span class="flatpickr-day nextMonthDay" aria-label="September 2, 2018" tabindex="-1">2</span><span class="flatpickr-day nextMonthDay" aria-label="September 3, 2018" tabindex="-1">3</span><span class="flatpickr-day nextMonthDay" aria-label="September 4, 2018" tabindex="-1">4</span><span class="flatpickr-day nextMonthDay" aria-label="September 5, 2018" tabindex="-1">5</span><span class="flatpickr-day nextMonthDay" aria-label="September 6, 2018" tabindex="-1">6</span><span class="flatpickr-day nextMonthDay" aria-label="September 7, 2018" tabindex="-1">7</span><span class="flatpickr-day nextMonthDay" aria-label="September 8, 2018" tabindex="-1">8</span><span class="flatpickr-day nextMonthDay" aria-label="September 9, 2018" tabindex="-1">9</span></div></div></div></div></div></div>
+              <input class="js-range-datepicker form-control u-form__input bg-transparent py-1 px-0" type="text" placeholder="Due date" aria-label="Due date"
+                     data-rp-wrapper="#datepickerWrapper"
+                     data-rp-date-format="d/m/Y">
+            </div>
             <!-- End Datepicker -->
           </div>
 
           <div class="col-6 col-sm-4 mb-4 mb-sm-0">
             <label class="d-block small text-uppercase font-weight-medium">Priority</label>
             <!-- Select -->
-            <div class="dropdown bootstrap-select js-select u-select w-100"><select class="js-select u-select w-100" data-style="btn-sm bg-transparent font-weight-normal px-0" tabindex="-98">
+            <select class="js-select u-select w-100" data-style="btn-sm bg-transparent font-weight-normal px-0">
               <option value="priorityHighest" data-icon="fa fa-arrow-up text-danger font-size-13 mr-2">Highest</option>
               <option value="priorityHigh" data-icon="fa fa-arrow-up text-danger font-size-13 mr-2">High</option>
-              <option value="priorityMedium" data-icon="fa fa-arrow-up text-warning font-size-13 mr-2" selected="">Medium</option>
+              <option value="priorityMedium" data-icon="fa fa-arrow-up text-warning font-size-13 mr-2" selected>Medium</option>
               <option value="priorityLow" data-icon="fa fa-arrow-down text-success font-size-13 mr-2">Low</option>
               <option value="priorityLowest" data-icon="fa fa-arrow-down text-success font-size-13 mr-2">Lowest</option>
-            </select><button type="button" class="btn dropdown-toggle btn-sm bg-transparent font-weight-normal px-0" data-toggle="dropdown" role="button" title="Medium"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner"><i class=" fa fa-arrow-up text-warning font-size-13 mr-2"></i> Medium</div></div> </div></button><div class="dropdown-menu " role="combobox"><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+            </select>
             <!-- End Select -->
           </div>
 
@@ -555,7 +572,7 @@
         <!-- Label Input -->
         <label class="d-block small text-uppercase font-weight-medium">Labels</label>
         <div class="u-tagsinput">
-          <div class="bootstrap-tagsinput"><span class="tag label label-info">HTML5<span data-role="remove"></span></span> <span class="tag label label-info"> CSS3<span data-role="remove"></span></span> <input type="text" placeholder=""></div><input type="text" value="HTML5, CSS3" data-role="tagsinput" style="display: none;">
+          <input type="text" value="HTML5, CSS3" data-role="tagsinput">
         </div>
         <!-- End Label Input -->
 
@@ -584,7 +601,7 @@
       </div>
     </form>
   </div>
-
+  <!-- End Create Project Modal Window -->
 
 <footer>
     <!-- Copyright -->
