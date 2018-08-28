@@ -299,7 +299,7 @@
 			{% for project in projects %}
 			<tr>
 				<td>
-					{{ project.name }}<strong class="text-info"> @ {{ attribute(project_types, project.type) }}</strong>
+
 
 					{% if project.last_hook_time!='0000-00-00 00:00:00' %}
 					<div>
@@ -312,29 +312,7 @@
 
 
 				</td>
-				<td>
 
-				</td>
-
-				<td>
-					{{ attribute(project_status, project.status) }}
-				</td>
-				<td>
-
-				  <div class="dropdown ">
-<a class="btn-sm btn btn-secondary dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-Ação
-</a>
-
-<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-<a class="dropdown-item" href="{{ urlFor('project_form',{'id':project.id}) }}">Editar</a>
-<a class="dropdown-item project_delete" href="#" data-id="{{project.id}}" >Excluir</a>
-</div>
-</div>
-
-
-
-				</td>
 			</tr>
 
 
@@ -359,10 +337,11 @@ Ação
                       </a>
 
                       <div id="settingsDropdown1" class="u-unfold right-0 text-left pl-2 mt-2 u-unfold--css-animation u-unfold--hidden fadeOut" aria-labelledby="settingsDropdown1Invoker" style="min-width: 160px; animation-duration: 300ms;">
-                        <a class="u-list__link" href="#">
+                        <a class="u-list__link" href="{{ urlFor('project_form',{'id':project.id}) }}">
                           <span class="fa fa-cogs min-width-6 text-center font-size-13"></span>
-                          Settings
+                          Editar
                         </a>
+
                         <a class="u-list__link" href="#">
                           <span class="fa fa-code-branch min-width-6 text-center font-size-13"></span>
                           Repository
@@ -371,9 +350,9 @@ Ação
                           <span class="fa fa-cloud-download-alt min-width-6 text-center font-size-13"></span>
                           Download
                         </a>
-                        <a class="u-list__link" href="#">
-                          <span class="fa fa-archive min-width-6 text-center font-size-13"></span>
-                          Archive
+                        <a class="u-list__link" href="#" data-id="{{project.id}}">
+                          <span class="fa fa-trash min-width-6 text-center font-size-13"></span>
+                          Excluir
                         </a>
                       </div>
                     </div>
@@ -383,14 +362,17 @@ Ação
                 <!-- End List of Icons -->
 
                 <div class="text-center">
-                  <img class="u-lg-avatar rounded-circle mx-auto mb-3" src="../../assets/img/160x160/img4.jpg" alt="Image Description">
+					<span class="u-icon u-icon-secondary--air u-icon--xl rounded-circle mb-3">
+					  <span class="fa fa-briefcase u-icon__inner font-size-32"></span>
+					</span>
 
                   <!-- Title -->
                   <div class="mb-4">
-                    <h3 class="h5 mb-1">Mapbox</h3>
+                    <h3 class="h5 mb-1">{{ project.name }}<strong class="text-info"> @ {{ attribute(project_types, project.type) }}</strong></h3>
                     <p class="font-size-14">The time has come to bring those ideas and plans to life.</p>
                   </div>
                   <!-- End Title -->
+				  <h4 class="h6 font-weight-normal mb-1">{{ attribute(project_status, project.status) }}</h4>
 
                 </div>
               </div>
