@@ -300,28 +300,26 @@
                 <!-- Blog - Submenu -->
                 <ul id="blogSubMenu" class="list-inline hs-sub-menu u-header__sub-menu py-3 mb-0 animated fadeOut" style="min-width: 220px; display: none;" aria-labelledby="blogMegaMenu">
 					<li class="dropdown-item px-0">
-  					<a class="nav-link u-list__link px-4" href="../blog/grid-left-sidebar.html">Left Sidebar</a>
-  				  </li>
+						<a class="nav-link u-list__link px-4" href="{{ urlFor('profile') }}">
+						Perfil
+						</a>
+  				  	</li>
+
+				  	<li class="dropdown-item px-0">
+					  <a class="nav-link u-list__link px-4" href="{{ urlFor('settings') }}">
+  							Configurações
+  						</a>
+  					</li>
+					<li class="dropdown-item px-0">
+						<a class="nav-link u-list__link px-4" href="{{ urlFor('logout') }}">
+	  						Sair
+	  					</a>
+				  	</li>
+
                 </ul>
                 <!-- End Submenu -->
               </li>
 
-			  <li class="nav-item dropdown">
-				  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-					  {{ auth_user.username }}
-				  </a>
-				  <div class="dropdown-menu">
-						  <a class="dropdown-item" href="{{ urlFor('profile') }}">
-						  Perfil
-					  </a>
-					  <a class="dropdown-item" href="{{ urlFor('settings') }}">
-						  Configurações
-					  </a>
-					  <a class="dropdown-item" href="{{ urlFor('logout') }}">
-						  Sair
-					  </a>
-				  </div>
-			  </li>
 			  {%endif%}
 
               <!-- End Button -->
