@@ -20,7 +20,7 @@ class ProjectsController
         $this->auth    = $auth;
 
         $this->project_types  = ['gh' => 'GitHub', 'bb' => 'BitBucket','gl'=>'GitLab'];
-        $this->project_status = [0 => 'Disabled', 1 => 'Active'];
+        $this->project_status = [0 => 'Inativo', 1 => 'Ativo'];
 
     }
 
@@ -63,7 +63,7 @@ class ProjectsController
         $params['pager']     = $pagination;
         $params['project_types']  = $this->project_types;
         $params['project_status'] = $this->project_status;
- 
+
          return $this->view->render($response, 'projects.twig', $params);
 
     }
