@@ -39,7 +39,7 @@
             <div class="media d-block d-sm-flex align-items-sm-center">
               <div class="u-lg-avatar position-relative mb-3 mb-sm-0 mr-3">
 
-				<img src="get_gravatar({{ auth_user.email }})"/>
+				<img src="" onload="this.onload=null; this.src=get_gravatar({{ auth_user.email }});" />
 				<script>
 				/**
 				 * Get either a Gravatar URL or complete image tag for a specified email address.
