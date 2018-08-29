@@ -51,7 +51,7 @@
         <div class="row justify-content-between align-items-center mb-4">
           <!-- Title -->
           <div class="col-sm-4 col-md-6 mb-3 mb-sm-0">
-            <h2 class="h6 mb-0">52 projects found</h2>
+		  <h2 class="h6 mb-0"><h4 class="card-title float-left">{{ pager.pagination.count }} Projeto{{ pager.pagination.count>1?'s':'' }}</h2>
           </div>
           <!-- End Title -->
 
@@ -1137,67 +1137,12 @@
   <!-- ========== END MAIN ========== -->
 
 <main id="content" role="main">
-    <!-- Breadcrumb Section -->
-    <div class="bg-primary">
-      <div class="container u-space-1-top pb-3">
-        <div class="row">
-          <div class="col-lg-5 order-lg-2 text-lg-right mb-4 mb-lg-0">
-            <div class="d-flex d-lg-inline-block justify-content-between justify-content-lg-end align-items-center align-items-lg-start">
-              <!-- Breadcrumb -->
-              <ol class="breadcrumb breadcrumb-white breadcrumb-no-gutter mb-0">
-                <li class="breadcrumb-item"><a class="breadcrumb-link" href="/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Projetos</li>
-              </ol>
-              <!-- End Breadcrumb -->
-
-              <!-- Breadcrumb Nav Toggle Button -->
-              <div class="d-lg-none">
-                <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white" aria-label="Toggle navigation" aria-expanded="false" aria-controls="breadcrumbNavBar" data-toggle="collapse" data-target="#breadcrumbNavBar">
-                  <span id="breadcrumbHamburgerTrigger" class="u-hamburger__box">
-                    <span class="u-hamburger__inner"></span>
-                  </span>
-                </button>
-              </div>
-              <!-- End Breadcrumb Nav Toggle Button -->
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="container u-space-1-bottom u-space-bottom-0--lg">
-        <div class="d-lg-flex justify-content-lg-between align-items-lg-center">
-
-
-          <div class="ml-lg-auto">
-            <!-- Button -->
-            <a class="btn btn-sm u-btn-white--air transition-3d-hover" href="#addProjectModal" data-modal-target="#addProjectModal" data-overlay-color="#111722">
-              <span class="fa fa-plus font-size-13 mr-2"></span>
-              Criar Projeto
-            </a>
-			{% if  pager.pagination.count    %}
-			  <a  class="btn btn-info btn-sm" href="{{ urlFor('project_form') }}">
-				  Criar Projeto
-			  </a>
-			{% endif %}
-            <!-- End Button -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Breadcrumb Section -->
-
 
     <!-- Content Section -->
     <div class="u-bg-light-blue-50">
       <div class="container u-space-2">
         <div class="row justify-content-between align-items-center mb-4">
-          <!-- Title -->
-          <div class="col-sm-4 col-md-6 mb-3 mb-sm-0">
-            <h2 class="h6 mb-0"><h4 class="card-title float-left">
-				{{ pager.pagination.count }} Projeto{{ pager.pagination.count>1?'s':'' }}</h2>
-          </div>
-          <!-- End Title -->
+
 
         </div>
 
@@ -1309,33 +1254,6 @@
 		  {% endif %}
 
         </div>
-
-		<!-- Pagination -->
-        <div class="d-flex justify-content-between align-items-center">
-          <nav aria-label="Page navigation">
-            <ul class="pagination mb-0">
-              <li class="page-item ml-0">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                  <span class="sr-only">Previous</span>
-                </a>
-              </li>
-              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
-              <li class="page-item"><a class="page-link" href="#">8</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          <small class="d-none d-sm-inline-block text-secondary">Showing 9 out of 52</small>
-        </div>
-        <!-- End Pagination -->
 
 
       </div>
