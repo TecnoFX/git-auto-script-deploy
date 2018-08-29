@@ -34,6 +34,34 @@
 
 </style>
 {% endblock %}
+
+{% block navbar_menu %}
+<!-- Navbar -->
+<div class="u-header u-header--bg-transparent-lg z-index-4">
+  <div class="u-header__section bg-transparent u-header--white-nav-links">
+	<nav class="js-breadcrumb-menu navbar navbar-expand-lg u-header__navbar">
+	  <div id="breadcrumbNavBar" class="collapse navbar-collapse py-0">
+		<ul class="navbar-nav w-100 u-header__navbar-nav">
+			<!-- Projetos -->
+			<li class="nav-item u-header__nav-item">
+			  <a class="nav-link u-header__nav-link active" href="{{ urlFor('projects') }}">Projetos</a>
+			</li>
+			<!-- Projetos -->
+
+			<!-- Configurações -->
+			<li class="nav-item u-header__nav-item">
+			  <a class="nav-link u-header__nav-link" href="{{ urlFor('settings') }}">Configurações</a>
+			</li>
+			<!-- Configurações -->
+
+		</ul>
+	  </div>
+	</nav>
+  </div>
+</div>
+<!-- End Navbar -->
+{% endblock %}
+
 {% block body %}
 <div class="u-bg-light-blue-50">
       <div class="container u-space-2">
