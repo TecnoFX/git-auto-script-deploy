@@ -10,8 +10,8 @@
   margin: 0 auto;
 }
 .form-project .form-signin-heading,
- 
- 
+
+
 .form-project .form-control {
   position: relative;
   height: auto;
@@ -29,11 +29,54 @@
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
- 
+
 .smtp{display:{{form.send_method=='smtp'?'block':'none'}};}
 
 </style>
 {% endblock %}
+
+{% block navbar_menu %}
+<!-- Navbar -->
+<div class="u-header u-header--bg-transparent-lg z-index-4">
+  <div class="u-header__section bg-transparent u-header--white-nav-links">
+	<nav class="js-breadcrumb-menu navbar navbar-expand-lg u-header__navbar">
+	  <div id="breadcrumbNavBar" class="collapse navbar-collapse py-0">
+		<ul class="navbar-nav w-100 u-header__navbar-nav">
+			<!-- Projetos -->
+			<li class="nav-item u-header__nav-item">
+			  <a class="nav-link u-header__nav-link" href="{{ urlFor('projects') }}">Projetos</a>
+			</li>
+			<!-- Projetos -->
+
+			<!-- Configurações -->
+			<li class="nav-item u-header__nav-item">
+			  <a class="nav-link u-header__nav-link" href="{{ urlFor('settings') }}">Configurações</a>
+			</li>
+			<!-- Configurações -->
+
+		</ul>
+	  </div>
+	</nav>
+  </div>
+</div>
+<!-- End Navbar -->
+{% endblock %}
+
+
+{% block botao %}
+<div class="ml-lg-auto">
+  <!-- Button -->
+  <a class="btn btn-sm u-btn-white--air transition-3d-hover" href="#addProjectModal"
+	 data-modal-target="#addProjectModal"
+	 data-overlay-color="#111722">
+	<span class="fa fa-plus font-size-13 mr-2"></span>
+	Criar Projeto
+  </a>
+  <!-- End Button -->
+</div>
+{% endblock %}
+
+
 {% block body %}
 <div class="card form-project ">
     <div class="card-block">
@@ -94,7 +137,7 @@
                     {% endfor %}
                 </select>
             </div>
-             
+
 
             <button class="btn btn-lg btn-primary " type="submit" name="submit_project">
                 Submit
@@ -108,10 +151,10 @@
 $(function() {
     $('#send_method').change(function(){
         if($('#send_method').val() == 'smtp') {
-            $('.smtp').show(); 
+            $('.smtp').show();
         } else {
-            $('.smtp').hide(); 
-        } 
+            $('.smtp').hide();
+        }
     });
     $('#send_method').change();
 });   </script>
