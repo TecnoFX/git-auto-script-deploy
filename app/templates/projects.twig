@@ -1,6 +1,13 @@
 {% extends 'full.layout.html.twig' %}
 {% block title %}Projetos{% endblock %}
 
+{% block breadcrumb %}
+<ol class="breadcrumb breadcrumb-white breadcrumb-no-gutter mb-0">
+  <li class="breadcrumb-item"><a class="breadcrumb-link" href="{{ urlFor('projects') }}">Home</a></li>
+  <li class="breadcrumb-item active" aria-current="page" href="">Projetos</li>
+</ol>
+{% endblock %}
+
 {% block navbar_menu %}
 <!-- Navbar -->
 <div class="u-header u-header--bg-transparent-lg z-index-4">
