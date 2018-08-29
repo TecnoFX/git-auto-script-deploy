@@ -57,7 +57,12 @@
 
           <!-- Filter -->
           <div class="col-sm-8 col-md-6 text-sm-right">
-
+		  <script>
+			  $('form select').on('change', function(){
+			  	$(this).closest('form').submit();
+			  }
+		  </script>
+		  
 		  <form  method="post" action="{{urlFor('project_search')}}">
 			<div class="form-group ">
 				<label for="search_text"  >
@@ -67,14 +72,13 @@
 				<input class="form-control u-form__input" placeholder="Search Front" aria-label="Buscar Projeto" type="text" value="{{query.search_text}}" id="search_text" name="search_text"/>
 			</div>
 
-
             <ul class="list-inline mb-0">
               <li class="list-inline-item">
                 <!-- Select -->
                 <select name="project_status" id="project_status" class="js-select u-select"
                         data-width="fit"
                         data-style="u-btn-primary--air btn-sm">
-                  <option value="" selected onchange="this.form.submit()">Todos os Status</option>
+                  <option value="" selected>Todos os Status</option>
 				  {% for key,value in project_status %}
 				  <option value="{{ key }}" {% if query.project_status ==(key) and query.project_status!="" %} selected{%endif%} >
 					  {{ value }}
@@ -88,7 +92,7 @@
                 <!-- Select -->
                 <select name="project_type" id="project_type" class="js-select u-select"
                         data-width="fit"
-                        data-style="u-btn-primary--air btn-sm" onchange="this.form.submit()">
+                        data-style="u-btn-primary--air btn-sm">
                   <option value="" selected>Todos os Tipos</option>
 				  {% for key,value in project_types %}
 				  <option value="{{ key }}" {% if query.project_type ==(key) and query.project_type!="" %} selected{%endif%} >
