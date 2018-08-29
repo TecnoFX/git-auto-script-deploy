@@ -38,7 +38,7 @@
           <div class="ml-lg-auto">
             <!-- Button -->
             <a class="btn btn-sm u-btn-white--air transition-3d-hover" href="#addProjectModal" data-modal-target="#addProjectModal" data-overlay-color="#111722">
-              <span class="fa fa-plus font-size-13 mr-2"></span>
+              <span class="fab fa-plus font-size-13 mr-2"></span>
               Criar Projeto
             </a>
 			{% if  pager.pagination.count    %}
@@ -103,7 +103,7 @@
             <div class="row justify-content-between align-items-center mb-3">
               <div class="col-6">
                 <a class="small text-secondary" href="#">
-                  <span class="fa fa-bookmark text-primary mr-1"></span>
+                  <span class="fab fa-bookmark text-primary mr-1"></span>
                   ID-{{project.id}}
                 </a>
               </div>
@@ -111,25 +111,25 @@
                 <!-- Settings -->
                 <div class="position-relative">
                   <a id="settingsDropdown{{project.id}}Invoker" class="u-icon u-icon-secondary--air u-icon--sm u-bg-transparent rounded" href="javascript:;" role="button" aria-controls="settingsDropdown{{project.id}}" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#settingsDropdown{{project.id}}" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
-                    <span class="fa fa-ellipsis-h u-icon__inner"></span>
+                    <span class="fab fa-ellipsis-h u-icon__inner"></span>
                   </a>
 
                   <div id="settingsDropdown{{project.id}}" class="u-unfold right-0 text-left pl-2 mt-2 u-unfold--css-animation u-unfold--hidden fadeOut" aria-labelledby="settingsDropdown{{project.id}}Invoker" style="min-width: 160px; animation-duration: 300ms; right: 0px;">
 					  <a class="u-list__link" href="{{ urlFor('project_form',{'id':project.id}) }}">
-						<span class="fa fa-cogs min-width-6 text-center font-size-13"></span>
+						<span class="fab fa-cogs min-width-6 text-center font-size-13"></span>
 						Editar
 					  </a>
 
 					  <a class="u-list__link" href="#">
-						<span class="fa fa-code-branch min-width-6 text-center font-size-13"></span>
+						<span class="fab fa-code-branch min-width-6 text-center font-size-13"></span>
 						Repository
 					  </a>
 					  <a class="u-list__link" href="#">
-						<span class="fa fa-cloud-download-alt min-width-6 text-center font-size-13"></span>
+						<span class="fab fa-cloud-download-alt min-width-6 text-center font-size-13"></span>
 						Download
 					  </a>
 					  <a class="u-list__link" href="#" data-id="{{project.id}}">
-						<span class="fa fa-trash min-width-6 text-center font-size-13"></span>
+						<span class="fab fa-trash min-width-6 text-center font-size-13"></span>
 						Excluir
 					  </a>
                   </div>
@@ -142,7 +142,7 @@
             <!-- Details -->
             <div class="d-sm-flex">
 				<span class="u-icon u-icon-secondary mb-3 mb-sm-0--air u-icon--xl rounded-circle mr-3">
-				  <span class="fa fa-{{ attribute(project_types, project.type) }} u-icon__inner font-size-32"></span>
+				  <span class="fab fa-{{ attribute(project_types, project.type) }} u-icon__inner font-size-32"></span>
 				</span>
 
               <div class="mr-3">
@@ -282,7 +282,7 @@
       <header class="row justify-content-between align-items-center no-gutters u-bg-light-blue-50 rounded-top py-3 px-5">
         <div class="col-3">
           <!--<a class="small text-secondary" href="#">
-            <span class="fa fa-bookmark text-primary mr-1"></span>
+            <span class="fab fa-bookmark text-primary mr-1"></span>
             FR-53
           </a>-->
         </div>
@@ -315,17 +315,17 @@
           <ul class="list-inline text-sm-right mb-0">
             <li class="list-inline-item mr-0">
               <a class="u-icon u-icon-secondary--air u-icon--sm" href="#" data-toggle="tooltip" data-placement="top" title="Add attach">
-                <span class="fa fa-paperclip u-icon__inner"></span>
+                <span class="fab fa-paperclip u-icon__inner"></span>
               </a>
             </li>
             <li class="list-inline-item mr-0">
               <a class="u-icon u-icon-secondary--air u-icon--sm" href="#" data-toggle="tooltip" data-placement="top" title="Create subtask">
-                <span class="fa fa-clone u-icon__inner"></span>
+                <span class="fab fa-clone u-icon__inner"></span>
               </a>
             </li>
             <li class="list-inline-item mr-0">
               <a class="u-icon u-icon-secondary--air u-icon--sm" href="#" data-toggle="tooltip" data-placement="top" title="Link issue">
-                <span class="fa fa-link u-icon__inner"></span>
+                <span class="fab fa-link u-icon__inner"></span>
               </a>
             </li>
           </ul>
@@ -422,11 +422,11 @@
             <label class="d-block small text-uppercase font-weight-medium">Priority</label>
             <!-- Select -->
             <select class="js-select u-select w-100" data-style="btn-sm bg-transparent font-weight-normal px-0">
-              <option value="priorityHighest" data-icon="fa fa-arrow-up text-danger font-size-13 mr-2">Highest</option>
-              <option value="priorityHigh" data-icon="fa fa-arrow-up text-danger font-size-13 mr-2">High</option>
-              <option value="priorityMedium" data-icon="fa fa-arrow-up text-warning font-size-13 mr-2" selected>Medium</option>
-              <option value="priorityLow" data-icon="fa fa-arrow-down text-success font-size-13 mr-2">Low</option>
-              <option value="priorityLowest" data-icon="fa fa-arrow-down text-success font-size-13 mr-2">Lowest</option>
+              <option value="priorityHighest" data-icon="fab fa-arrow-up text-danger font-size-13 mr-2">Highest</option>
+              <option value="priorityHigh" data-icon="fab fa-arrow-up text-danger font-size-13 mr-2">High</option>
+              <option value="priorityMedium" data-icon="fab fa-arrow-up text-warning font-size-13 mr-2" selected>Medium</option>
+              <option value="priorityLow" data-icon="fab fa-arrow-down text-success font-size-13 mr-2">Low</option>
+              <option value="priorityLowest" data-icon="fab fa-arrow-down text-success font-size-13 mr-2">Lowest</option>
             </select>
             <!-- End Select -->
           </div>
