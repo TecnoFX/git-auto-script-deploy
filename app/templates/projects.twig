@@ -1,10 +1,21 @@
 {% extends 'full.layout.html.twig' %}
 {% block title %}Projetos{% endblock %}
 
+{% block botao %}
+<div class="ml-lg-auto">
+  <!-- Button -->
+  <a class="btn btn-sm u-btn-white--air transition-3d-hover" href="#addProjectModal"
+	 data-modal-target="#addProjectModal"
+	 data-overlay-color="#111722">
+	<span class="fa fa-plus font-size-13 mr-2"></span>
+	Create Project
+  </a>
+  <!-- End Button -->
+</div>
+{% endblock %}
+
 {% block body %}
-<!-- ========== MAIN ========== -->
-  <main id="content" role="main">
-    
+
 
     <!-- Content Section -->
     <div class="u-bg-light-blue-50">
