@@ -38,7 +38,7 @@
 {% block breadcrumb %}
 <ol class="breadcrumb breadcrumb-white breadcrumb-no-gutter mb-0">
   <li class="breadcrumb-item"><a class="breadcrumb-link" href="{{ urlFor('projects') }}">Home</a></li>
-  <li class="breadcrumb-item active" aria-current="page" href="">Projetos</li>
+  <li class="breadcrumb-item active" aria-current="page" href="{{ urlFor('settings') }}">Configurações</li>
 </ol>
 {% endblock %}
 
@@ -74,21 +74,6 @@
 </div>
 <!-- End Navbar -->
 {% endblock %}
-
-
-{% block botao %}
-<div class="ml-lg-auto">
-  <!-- Button -->
-  <a class="btn btn-sm u-btn-white--air transition-3d-hover" href="#addProjectModal"
-	 data-modal-target="#addProjectModal"
-	 data-overlay-color="#111722">
-	<span class="fa fa-plus font-size-13 mr-2"></span>
-	Criar Projeto
-  </a>
-  <!-- End Button -->
-</div>
-{% endblock %}
-
 
 {% block body %}
 <div class="card form-project ">
