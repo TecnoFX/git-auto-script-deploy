@@ -8,7 +8,7 @@ $is_loggedin = function ($request, $response, $next)
 {
     if (!$this->auth->loggedin())
     {
-        $this->flash->addMessage('error', 'Please lgin');
+        $this->flash->addMessage('error', 'Por Favor Faça Login');
         return $response->withRedirect($this->router->pathFor('login'));
     }
     return $next($request, $response);
