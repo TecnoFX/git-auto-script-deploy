@@ -39,7 +39,7 @@
             <!-- Button -->
             <a class="btn btn-sm u-btn-white--air transition-3d-hover" href="#addProjectModal" data-modal-target="#addProjectModal" data-overlay-color="#111722">
               <span class="fa fa-plus font-size-13 mr-2"></span>
-              Create Project
+              Criar Projeto
             </a>
 			{% if  pager.pagination.count    %}
 			  <a  class="btn btn-info btn-sm" href="{{ urlFor('project_form') }}">
@@ -81,7 +81,7 @@
           <!-- Title -->
           <div class="col-sm-4 col-md-6 mb-3 mb-sm-0">
             <h2 class="h6 mb-0"><h4 class="card-title float-left">
-				{{ pagination.count }} Projeto{{ pagination.count>1?'s':'' }}</h2>
+				{{ pager.pagination.count }} Projeto{{ pager.pagination.count>1?'s':'' }}</h2>
           </div>
           <!-- End Title -->
 
