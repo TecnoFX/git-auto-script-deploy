@@ -51,7 +51,7 @@
         <div class="row justify-content-between align-items-center mb-4">
           <!-- Title -->
           <div class="col-sm-4 col-md-6 mb-3 mb-sm-0">
-		  <h2 class="h6 mb-0"><h4 class="card-title float-left">{{ pager.pagination.count }} Projeto{{ pager.pagination.count>1?'s':'' }}</h2>
+		  	<h2 class="h6 mb-0">{{ pager.pagination.count }} Projeto{{ pager.pagination.count>1?'s':'' }}</h2>
           </div>
           <!-- End Title -->
 
@@ -63,10 +63,9 @@
                 <select class="js-select u-select"
                         data-width="fit"
                         data-style="u-btn-primary--air btn-sm">
-                  <option value="bydateFilterSelect1" selected>Latest</option>
-                  <option value="bydateFilterSelect2">Popular</option>
-                  <option value="bydateFilterSelect3">Low price</option>
-                  <option value="bydateFilterSelect4">High price</option>
+                  <option value="bydateFilterSelect1" selected>Status</option>
+                  <option value="bydateFilterSelect2">Ativo</option>
+                  <option value="bydateFilterSelect3">Inativo price</option>
                 </select>
                 <!-- End Select -->
               </li>
@@ -75,20 +74,10 @@
                 <select class="js-select u-select"
                         data-width="fit"
                         data-style="u-btn-primary--air btn-sm">
-                  <option value="alphabeticalOrderSelect1" selected>A-to-Z</option>
-                  <option value="alphabeticalOrderSelect2">Z-to-A</option>
+                  <option value="alphabeticalOrderSelect1" selected>Tipo do Projeto</option>
+                  <option value="alphabeticalOrderSelect2">github</option>
                 </select>
                 <!-- End Select -->
-              </li>
-              <li class="list-inline-item">
-                <a class="btn btn-sm u-btn-primary--air" href="projects.html">
-                  <span class="fa fa-th-large"></span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <span class="btn btn-sm u-btn-primary--air active">
-                  <span class="fa fa-list"></span>
-                </span>
               </li>
             </ul>
           </div>
