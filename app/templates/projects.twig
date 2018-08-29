@@ -8,43 +8,17 @@
 	<nav class="js-breadcrumb-menu navbar navbar-expand-lg u-header__navbar">
 	  <div id="breadcrumbNavBar" class="collapse navbar-collapse py-0">
 		<ul class="navbar-nav w-100 u-header__navbar-nav">
-
 			<!-- Projetos -->
 			<li class="nav-item u-header__nav-item">
 			  <a class="nav-link u-header__nav-link" href="{{ urlFor('projects') }}">Projetos</a>
 			</li>
 			<!-- Projetos -->
 
-
-		  <!-- Account Settings -->
-		  <li class="nav-item hs-has-sub-menu u-header__nav-item"
-			  data-event="hover"
-			  data-animation-in="slideInUp"
-			  data-animation-out="fadeOut">
-			<a id="accountSettingsDropdown" class="nav-link u-header__nav-link" href="javascript:;"
-			   aria-haspopup="true"
-			   aria-expanded="false"
-			   aria-labelledby="accountSettingsDropdown">
-			  Account settings
-			  <span class="fa fa-angle-down u-header__nav-link-icon"></span>
-			</a>
-
-			<!-- Submenu -->
-			<ul id="accountSettingsDropdown" class="list-inline hs-sub-menu u-header__sub-menu py-lg-3 mb-0" style="min-width: 220px;"
-				aria-labelledby="accountSettingsDropdown">
-			  <li class="dropdown-item px-0">
-				<a class="nav-link u-header__sub-menu-nav-link u-list__link px-4" href="edit-profile.html">Edit profile</a>
-			  </li>
-			  <li class="dropdown-item px-0">
-				<a class="nav-link u-header__sub-menu-nav-link u-list__link px-4" href="change-password.html">Change password</a>
-			  </li>
-			  <li class="dropdown-item px-0">
-				<a class="nav-link u-header__sub-menu-nav-link u-list__link px-4" href="notifications.html">Notifications</a>
-			  </li>
-			</ul>
-			<!-- End Submenu -->
-		  </li>
-		  <!-- Account Settings -->
+			<!-- Configurações -->
+			<li class="nav-item u-header__nav-item">
+			  <a class="nav-link u-header__nav-link" href="{{ urlFor('settings') }}">Configurações</a>
+			</li>
+			<!-- Configurações -->
 
 		</ul>
 	  </div>
@@ -62,7 +36,7 @@
 	 data-modal-target="#addProjectModal"
 	 data-overlay-color="#111722">
 	<span class="fa fa-plus font-size-13 mr-2"></span>
-	Create Project
+	Criar Projeto
   </a>
   <!-- End Button -->
 </div>
