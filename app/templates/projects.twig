@@ -12,9 +12,8 @@
             <div class="d-flex d-lg-inline-block justify-content-between justify-content-lg-end align-items-center align-items-lg-start">
               <!-- Breadcrumb -->
               <ol class="breadcrumb breadcrumb-white breadcrumb-no-gutter mb-0">
-                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../home/index.html">Home</a></li>
-                <li class="breadcrumb-item"><a class="breadcrumb-link" href="dashboard.html">Account</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Projects List</li>
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page" href="">Projetos</li>
               </ol>
               <!-- End Breadcrumb -->
 
@@ -39,6 +38,16 @@
             <!-- User Info -->
             <div class="media d-block d-sm-flex align-items-sm-center">
               <div class="u-lg-avatar position-relative mb-3 mb-sm-0 mr-3">
+			  	{{
+				$email = "someone@somewhere.com";
+				$default = "https://www.somewhere.com/homestar.jpg";
+				$size = 160;
+
+				$grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
+
+				echo $grav_url;
+				}}
+
                 <img class="u-lg-avatar rounded-circle" src="/assets/img/160x160/img2.jpg" alt="Image Description">
                 <span class="u-badge u-badge-border-success u-badge--md u-badge-pos--bottom-right-0 rounded-circle">
                   <span class="fa fa-check"></span>
