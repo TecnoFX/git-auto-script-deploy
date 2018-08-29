@@ -144,5 +144,20 @@ $(function() {
         }
     });
     $('#type').change();
-});   </script>
-{% endblock %}
+});
+</script>
+
+<footer>
+    <!-- Copyright -->
+    <div class="container text-center u-space-1">
+      <!-- Logo -->
+      <a class="d-inline-block mb-2" href="{{ urlFor('projects') }}" aria-label="Front">
+        <img src="/assets/svg/logos/logo.svg" alt="Logo" style="width: 120px;">
+      </a>
+      <!-- End Logo -->
+
+      <p class="small text-muted">© Tecno FX. {{ "now"|date("Y") }} Auto Deploy. All rights reserved.</p>
+    </div>
+    <!-- End Copyright -->
+  </footer>
+{%endblock%}
