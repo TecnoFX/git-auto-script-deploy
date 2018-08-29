@@ -14,6 +14,12 @@
 			</li>
 			<!-- Projetos -->
 
+			<!-- Perfil -->
+			<li class="nav-item u-header__nav-item">
+			  <a class="nav-link u-header__nav-link" href="{{ urlFor('perfil') }}">Perfil</a>
+			</li>
+			<!-- Perfil -->
+
 			<!-- Configurações -->
 			<li class="nav-item u-header__nav-item">
 			  <a class="nav-link u-header__nav-link" href="{{ urlFor('settings') }}">Configurações</a>
@@ -62,7 +68,7 @@
 			  	$(this).closest('form').submit();
 			  }
 		  </script>
-		  
+
 		  <form  method="post" action="{{urlFor('project_search')}}">
 			<div class="form-group ">
 				<label for="search_text"  >

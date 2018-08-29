@@ -1,39 +1,5 @@
 {% extends 'full.layout.html.twig' %}
 {% block title %}{{ title }}{% endblock %}
-{% block head %}
-<style type="text/css">
-
-
- .form-project {
-  max-width: 530px;
-  padding: 15px;
-  margin: 0 auto;
-}
-.form-project .form-signin-heading,
-
-
-.form-project .form-control {
-  position: relative;
-  height: auto;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 10px;
-  font-size: 16px;
-}
-.form-project .form-control:focus {
-  z-index: 2;
-}
-.form-project input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-
-
-</style>
-{% endblock %}
 
 {% block navbar_menu %}
 <!-- Navbar -->
@@ -47,6 +13,12 @@
 			  <a class="nav-link u-header__nav-link active" href="{{ urlFor('projects') }}">Projetos</a>
 			</li>
 			<!-- Projetos -->
+
+			<!-- Perfil -->
+			<li class="nav-item u-header__nav-item">
+			  <a class="nav-link u-header__nav-link" href="{{ urlFor('perfil') }}">Perfil</a>
+			</li>
+			<!-- Perfil -->
 
 			<!-- Configurações -->
 			<li class="nav-item u-header__nav-item">
