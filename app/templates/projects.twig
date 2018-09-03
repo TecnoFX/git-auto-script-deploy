@@ -125,6 +125,14 @@
 
         <div class="mb-7">
 
+		{% if pager.pagination.count==0 %}
+		Nenhum Projeto Econtrado.
+		<a  class="btn btn-info btn-sm" href="{{ urlFor('project_form') }}">
+		Criar Projeto</a>
+		{% else %}
+
+		{% for project in projects %}
+
           <!-- Projects -->
           <div class="card p-5 mb-5">
             <!-- List of Icons -->
@@ -219,26 +227,31 @@
                   </div>
                   <!-- End Members List -->
 
-                  <!-- Budget -->
+				  <!-- Budget -->
                   <div class="u-ver-divider u-ver-divider--none-sm pr-4 mb-3 mb-sm-0 mr-4">
-                    <h4 class="small font-weight-normal text-secondary mb-0">Budget</h4>
-                    <span class="text-dark">$9,145</span>
+                    <h4 class="small font-weight-normal text-secondary mb-0">Branch</h4>
+                    <span class="text-dark">{{ project.branch }}</span>
                   </div>
                   <!-- End Budget -->
 
                   <!-- Priority -->
                   <div class="mr-4">
-                    <h4 class="small font-weight-normal text-secondary mb-0">Priority</h4>
-                    <span class="fa fa-arrow-up text-warning font-size-13"></span>
-                    <span class="text-dark">Medium</span>
+                    <h4 class="small font-weight-normal text-secondary mb-0">Build</h4>
+                    <span class="font-size-13 fa  {{project.last_hook_status?'fa-check text-success':'fa-times text-danger'}}"></span>
+                    <span class="text-dark">
+					<strong class="{{project.last_hook_status?'text-success':'text-danger'}}">{{project.last_hook_status?'Sucesso':'Error'}} </strong></span>
                   </div>
                   <!-- End Priority -->
+				  
                 </div>
               </div>
             </div>
             <!-- End Details -->
           </div>
           <!-- End Projects -->
+
+		  {% endfor %}
+		  {% endif %}
 
         </div>
 
@@ -366,21 +379,7 @@
                   </div>
                   <!-- End Members List -->
 
-                  <!-- Budget -->
-                  <div class="u-ver-divider u-ver-divider--none-sm pr-4 mb-3 mb-sm-0 mr-4">
-                    <h4 class="small font-weight-normal text-secondary mb-0">Branch</h4>
-                    <span class="text-dark">{{ project.branch }}</span>
-                  </div>
-                  <!-- End Budget -->
 
-                  <!-- Priority -->
-                  <div class="mr-4">
-                    <h4 class="small font-weight-normal text-secondary mb-0">Build</h4>
-                    <span class="font-size-13 fa  {{project.last_hook_status?'fa-check text-success':'fa-times text-danger'}}"></span>
-                    <span class="text-dark">
-					<strong class="{{project.last_hook_status?'text-success':'text-danger'}}">{{project.last_hook_status?'Sucesso':'Error'}} </strong></span>
-                  </div>
-                  <!-- End Priority -->
                 </div>
               </div>
             </div>
