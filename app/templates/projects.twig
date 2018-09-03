@@ -334,7 +334,10 @@ function nl2br (str, is_xhtml) {
 
 <!-- Create Project Modal Window -->
   <div id="addProjectModal" class="js-add-project-window u-modal-window bg-transparent" style="width: 680px;">
-    <form class="bg-white rounded mb-9">
+	{% include 'flash.twig' %}
+	{% set form = flash('form')?flash('form'):form %}
+	<form class="bg-white rounded mb-9" method="post">
+	
       <!-- Header -->
       <header class="row justify-content-between align-items-center no-gutters u-bg-light-blue-50 rounded-top py-3 px-5">
         <div class="col-3">
@@ -403,34 +406,18 @@ function nl2br (str, is_xhtml) {
           </div>
 
           <div class="col-6 col-sm">
-            <label class="d-block small text-uppercase font-weight-medium">Assignee</label>
+            <label class="d-block small text-uppercase font-weight-medium">Tipo</label>
             <!-- Select -->
-            <select class="js-select u-select" title="Add assignee"
+            <select class="js-select u-select" name="type" id="type" required title="Tipo do Projeto"
                     data-width="100%"
                     data-style="btn-sm bg-transparent text-secondary font-weight-normal px-0"
                     data-live-search="true"
                     data-searchbox-classes="input-group-sm">
-              <option value="assignee1" data-tokens="user1" data-content='
-                <span class="d-flex align-items-center">
-                  <img class="u-xs-avatar rounded-circle mr-2" src="../../assets/img/32x32/img9.jpg" alt="Image Description">
-                  <span>Sebastian Diaz</span>
-                </span>'>
-                Sebastian Diaz
-              </option>
-              <option value="assignee2" data-tokens="user2" data-content='
-                <span class="d-flex align-items-center">
-                  <img class="u-xs-avatar rounded-circle mr-2" src="../../assets/img/32x32/img7.jpg" alt="Image Description">
-                  <span>Eliza Donovan</span>
-                </span>'>
-                Eliza Donovan
-              </option>
-              <option value="assignee3" data-tokens="user3" data-content='
-                <span class="d-flex align-items-center">
-                  <img class="u-xs-avatar rounded-circle mr-2" src="../../assets/img/32x32/img6.jpg" alt="Image Description">
-                  <span>Cameron Brown</span>
-                </span>'>
-                Cameron Brown
-              </option>
+			  {% for key,value in project_types %}
+			  <option value="{{ key }}" {% if form.type ==key%} selected{%endif%}>
+				  {{ value }}
+			  </option>
+			  {% endfor %}
             </select>
             <!-- End Select -->
           </div>
@@ -469,33 +456,6 @@ function nl2br (str, is_xhtml) {
           </div>
         </div>
         <!-- End Status -->
-
-        <hr class="my-4">
-
-        <!-- Details -->
-        <div class="row justify-content-between">
-
-          <div class="col-6 col-sm-4 mb-4 mb-sm-0">
-            <label class="d-block small text-uppercase font-weight-medium">Priority</label>
-            <!-- Select -->
-            <select class="js-select u-select w-100" data-style="btn-sm bg-transparent font-weight-normal px-0">
-              <option value="priorityHighest" data-icon="fa fa-arrow-up text-danger font-size-13 mr-2">Highest</option>
-              <option value="priorityHigh" data-icon="fa fa-arrow-up text-danger font-size-13 mr-2">High</option>
-              <option value="priorityMedium" data-icon="fa fa-arrow-up text-warning font-size-13 mr-2" selected>Medium</option>
-              <option value="priorityLow" data-icon="fa fa-arrow-down text-success font-size-13 mr-2">Low</option>
-              <option value="priorityLowest" data-icon="fa fa-arrow-down text-success font-size-13 mr-2">Lowest</option>
-            </select>
-            <!-- End Select -->
-          </div>
-
-          <div class="col-sm-4">
-            <label class="d-block small text-uppercase font-weight-medium">Budget</label>
-            <div class="input-group input-group-sm u-form u-form--sm u-form--no-brd">
-              <input class="form-control u-form__input p-0" type="text" placeholder="Project budget" aria-label="Project budget">
-            </div>
-          </div>
-        </div>
-        <!-- End Details -->
 
 
         <!-- Buttons -->

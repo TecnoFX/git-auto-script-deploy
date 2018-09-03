@@ -3,15 +3,14 @@
 {% block head %}
 <style type="text/css">
 
-
  .form-project {
   max-width: 630px;
   padding: 15px;
   margin: 0 auto;
 }
 .form-project .form-signin-heading,
- 
- 
+
+
 .form-project .form-control {
   position: relative;
   height: auto;
@@ -29,7 +28,7 @@
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
- 
+
 
 
 </style>
@@ -166,12 +165,11 @@
 $(function() {
     $('#type').change(function(){
         if($('#type').val() == 'gh' || $('#type').val() == 'gl') {
-            $('#gh_secret').show(); 
+            $('#gh_secret').show();
         } else {
-            $('#gh_secret').hide(); 
-        } 
+            $('#gh_secret').hide();
+        }
     });
     $('#type').change();
 });   </script>
 {% endblock %}
- 
